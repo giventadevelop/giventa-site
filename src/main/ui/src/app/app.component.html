@@ -34,31 +34,46 @@
   </div>
 
   <!--Header-Upper-->
-  <div class="header-upper">
-    <div class="auto-container clearfix">
+  <!--<div class="header-upper">
+    <div class="auto-container clearfix">-->
 
-      <div class="pull-left logo-box">
+     <!-- <div class="pull-left logo-box">
         <div class="logo"><a [routerLink]="['/home']"><img src="../assets/images/giventalogo_180x60_menu_bar.png" alt="logo" title=""></a></div>
-      </div>
+      </div>-->
 
-      <div class="nav-outer clearfix">
+     <!-- <div class="nav-outer clearfix">-->
         <!--Mobile Navigation Toggler-->
-        <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+       <!-- <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>-->
         <!-- Main Menu -->
-        <nav class="main-menu navbar-expand-md">
+
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
           <div class="navbar-header">
-            <!-- Toggle Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" [routerLink]="['/home']"><img src="../assets/images/giventalogo_180x60_menu_bar.png" alt="logo" title=""></a>
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item active ">  <a class="nav-link navigation-menu" [routerLink]="['/home']">Home</a>  </li>
+            <li class="nav-item ">  <a class="nav-link navigation-menu" [routerLink]="['/about-us']">About</a>  </li>
+            <li class="nav-item ">  <a class="nav-link navigation-menu" [routerLink]="['/services']">Services</a>  </li>
+            <li class="nav-item ">  <a class="nav-link navigation-menu" [routerLink]="['/contact-us']">Contact us</a>  </li>
+          </ul>
+        </div>
+      </nav>
+
+        <!--<nav class="main-menu ">
+          <div class="navbar-header">
+            &lt;!&ndash; Toggle Button &ndash;&gt;
+           &lt;!&ndash; <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            </button>
+            </button>&ndash;&gt;
           </div>
 
-          <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+          <div class="navbar-inverse clearfix" id="navbarSupportedContent">
             <ul class="navigation clearfix">
               <li class="current dropdown"><a [routerLink]="['/home']">Home</a>
-               <!-- <ul>
+               &lt;!&ndash; <ul>
                   <li class="dropdown"><a href="#">Home Pages</a>
                     <ul>
                       <li><a href="index.html">Home Page 01</a></li>
@@ -76,31 +91,31 @@
                       <li><a href="index-6.html">Header Style 06</a></li>
                     </ul>
                   </li>
-                </ul>-->
+                </ul>&ndash;&gt;
               </li>
-              <li ><a [routerLink]="['/about-us']">About</a>
-              <!--  <ul>
+              <li > <a [routerLink]="['/about-us']">About</a>
+              &lt;!&ndash;  <ul>
                   <li><a href="about.html">About Us</a></li>
                   <li><a href="faq.html">Faq</a></li>
                   <li><a href="price.html">Price</a></li>
                   <li><a href="team.html">Team</a></li>
                   <li><a href="testimonial.html">Testimonial</a></li>
                   <li><a href="comming-soon.html">Comming Soon</a></li>
-                </ul>-->
+                </ul>&ndash;&gt;
               </li>
-              <li ><a [routerLink]="['/services']">Services</a>
-                <!--<ul>
+              <li > <a [routerLink]="['/services']">Services</a>
+                &lt;!&ndash;<ul>
                   <li><a href="services.html">Services</a></li>
                   <li><a href="services-detail.html">Services Detail</a></li>
-                </ul>-->
+                </ul>&ndash;&gt;
               </li>
-             <!-- <li class="dropdown"><a href="#">Projects</a>
+             &lt;!&ndash; <li class="dropdown"><a href="#">Projects</a>
                 <ul>
                   <li><a href="projects.html">Projects</a></li>
                   <li><a href="projects-detail.html">Projects Detail</a></li>
                 </ul>
-              </li>-->
-             <!-- <li class="dropdown"><a href="#">Shop</a>
+              </li>&ndash;&gt;
+             &lt;!&ndash; <li class="dropdown"><a href="#">Shop</a>
                 <ul>
                   <li><a href="shop.html">Our Products</a></li>
                   <li><a href="shop-single.html">Product Single</a></li>
@@ -108,24 +123,24 @@
                   <li><a href="checkout.html">Checkout</a></li>
                   <li><a href="account.html">Account</a></li>
                 </ul>
-              </li>-->
-              <!--<li class="dropdown"><a href="#">Blog</a>
+              </li>&ndash;&gt;
+              &lt;!&ndash;<li class="dropdown"><a href="#">Blog</a>
                 <ul>
                   <li><a href="blog.html">Our Blog</a></li>
                   <li><a href="blog-classic.html">Blog Classic</a></li>
                   <li><a href="news-detail.html">Blog Single</a></li>
                   <li><a href="not-found.html">Not Found</a></li>
                 </ul>
-              </li>-->
-              <!--<li><a href="contact.html">Contact us</a></li>-->
-              <li><a [routerLink]="['/contact-us']">Contact us</a></li>
+              </li>&ndash;&gt;
+              &lt;!&ndash;<li><a href="contact.html">Contact us</a></li>&ndash;&gt;
+              <li>  <a [routerLink]="['/contact-us']">Contact us</a>  </li>
 
             </ul>
           </div>
-        </nav>
+        </nav>-->
 
         <!-- Main Menu End-->
-        <div class="outer-box clearfix">
+     <!--   <div class="outer-box clearfix">-->
 
           <!-- Cart Box -->
           <!--<div class="cart-box">
@@ -165,18 +180,18 @@
           <div class="search-box-btn search-box-outer"><span class="icon fa fa-search"></span></div>
 
           &lt;!&ndash; Nav Btn &ndash;&gt;-->
-          <div class="nav-btn navSidebar-button"><span class="icon flaticon-menu-2"></span></div>
+          <!--<div class="nav-btn navSidebar-button"><span class="icon flaticon-menu-2"></span></div>-->
 
           <!-- Quote Btn -->
-          <div class="btn-box">
+         <!-- <div class="btn-box">
             <a href="contact.html" class="theme-btn btn-style-one"><span class="txt">Free Consulting</span></a>
-          </div>
+          </div>-->
 
-        </div>
-      </div>
+       <!-- </div>-->
+      <!--</div>-->
 
-    </div>
-  </div>
+    <!--</div>
+  </div>-->
   <!--End Header Upper-->
 
   <!-- Sticky Header  -->
@@ -243,15 +258,15 @@
   </div>--><!-- End Sticky Menu -->
 
   <!-- Mobile Menu  -->
-  <div class="mobile-menu">
+  <!--<div class="mobile-menu">
     <div class="menu-backdrop"></div>
     <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
     <nav class="menu-box">
       <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="" title=""></a></div>
-      <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+      <div class="menu-outer">&lt;!&ndash;Here Menu Will Come Automatically Via Javascript / Same Menu as in Header&ndash;&gt;</div>
     </nav>
-  </div><!-- End Mobile Menu -->
+  </div>--><!-- End Mobile Menu -->
 
 </header>
 <!-- End Main Header -->
@@ -297,10 +312,10 @@
                   <!--<h5>Quick Links</h5>-->
                   <h5>Features</h5>
                   <ul class="list-link">
-                    <li class="post" style="color: #ffffff"> <strong>Managed IT services</strong> </li>
+                    <li class="post" style="color: #ffffff"> <strong>Managed IT Services</strong> </li>
                     <li class="post" style="color: #ffffff"> <strong>Cloud Services</strong> </li>
-                    <li class="post" style="color: #ffffff"> <strong>IT support & helpdesk</strong> </li>
-                    <li class="post" style="color: #ffffff"> <strong>Cyber security</strong> </li>
+                    <li class="post" style="color: #ffffff"> <strong>IT Support & Helpdesk</strong> </li>
+                    <li class="post" style="color: #ffffff"> <strong>Cyber Security</strong> </li>
                     <li class="post" style="color: #ffffff"> <strong>Custom Software</strong> </li>
                     <li class="post" style="color: #ffffff"> <strong>Free Consultation</strong> </li>
                    <!-- <li>Our Business Growth</li>-->

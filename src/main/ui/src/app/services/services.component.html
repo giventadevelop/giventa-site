@@ -4,7 +4,7 @@
   <div class="xs-sidebar-widget">
     <div class="sidebar-widget-container">
       <div class="widget-heading">
-        <a href="#" class="close-side-widget">
+        <a [routerLink]="['/services']" class="close-side-widget">
           X
         </a>
       </div>
@@ -14,12 +14,12 @@
         <div class="sidebar-info-contents">
           <div class="content-inner">
             <div class="logo">
-              <a href="index.html"><img src="images/logo-2.png" alt="" /></a>
+             <!-- <a href="index.html"><img src="images/logo-2.png" alt="" /></a>-->
             </div>
             <div class="content-box">
               <h2>About Us</h2>
               <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
-              <a href="#" class="theme-btn btn-style-two"><span class="txt">Consultation</span></a>
+              <a [routerLink]="['/services']" class="theme-btn btn-style-two"><span class="txt">Consultation</span></a>
             </div>
             <div class="contact-info">
               <h2>Contact Info</h2>
@@ -32,11 +32,11 @@
             </div>
             <!-- Social Box -->
             <ul class="social-box">
-              <li class="facebook"><a href="#" class="fa fa-facebook-f"></a></li>
-              <li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
-              <li class="linkedin"><a href="#" class="fa fa-linkedin"></a></li>
-              <li class="instagram"><a href="#" class="fa fa-instagram"></a></li>
-              <li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
+              <li class="facebook"><a [routerLink]="['/services']" class="fa fa-facebook-f"></a></li>
+              <li class="twitter"><a [routerLink]="['/services']" class="fa fa-twitter"></a></li>
+              <li class="linkedin"><a [routerLink]="['/services']" class="fa fa-linkedin"></a></li>
+              <li class="instagram"><a [routerLink]="['/services']" class="fa fa-instagram"></a></li>
+              <li class="youtube"><a [routerLink]="['/services']" class="fa fa-youtube"></a></li>
             </ul>
           </div>
         </div>
@@ -69,16 +69,16 @@
       <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
         <div class="inner-box">
           <div class="image">
-            <a href="#"><img src="images/resource/news-5.jpg" alt="" /></a>
+            <a [routerLink]="['/services']"><img src="../../assets/images/resource/news-5.jpg" alt="" /></a>
           </div>
           <div class="lower-content">
             <div class="content">
               <div class="icon-box">
                 <span class="icon flaticon-coding-1"></span>
               </div>
-              <h4><a href="#">Web Development</a></h4>
-              <div class="text">We carry more than just good coding skills. Our experience makes us stand out from other web development.</div>
-             <!-- <a class="read-more" href="#">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
+              <h4><a [routerLink]="['/services']">Web Development</a></h4>
+              <div class="text"> We carry more than just good coding skills. Our experience makes us stand out from other web development. </div>
+             <!-- <a class="read-more" [routerLink]="['/services']">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
             </div>
           </div>
         </div>
@@ -92,13 +92,13 @@
               <div class="icon-box">
                 <span class="icon flaticon-mobile-app"></span>
               </div>
-              <h4><a href="#">Web Development</a></h4>
-              <div class="text">We carry more than just good coding skills. Our experience makes us stand out from other web development.</div>
-              <!--<a class="read-more" href="#">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
+              <h4><a [routerLink]="['/services']">Mobile Development</a></h4>
+              <div class="text">  Android, iOS, and cross-platform app development. Use the expertise of full-stack developers from a reliable provider. </div>
+              <!--<a class="read-more" [routerLink]="['/services']">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
             </div>
           </div>
           <div class="image">
-            <a href="#"><img src="images/resource/news-6.jpg" alt="" /></a>
+            <a [routerLink]="['/services']"><img src="../../assets/images/resource/news-6.jpg" alt="" /></a>
           </div>
         </div>
       </div>
@@ -107,16 +107,16 @@
       <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
         <div class="inner-box">
           <div class="image">
-            <a href="#"><img src="images/resource/news-7.jpg" alt="" /></a>
+            <a [routerLink]="['/services']"><img src="../../assets/images/resource/news-7.jpg" alt="" /></a>
           </div>
           <div class="lower-content">
             <div class="content">
               <div class="icon-box">
                 <span class="icon flaticon-computer"></span>
               </div>
-              <h4><a href="#">UI/UX Design</a></h4>
+              <h4><a [routerLink]="['/services']">UI/UX Design</a></h4>
               <div class="text">Build the product you need on time with an experienced team that uses a clear and effective design process.</div>
-              <!--<a class="read-more" href="#">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
+              <!--<a class="read-more" [routerLink]="['/services']">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
             </div>
           </div>
         </div>
@@ -126,16 +126,16 @@
       <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
         <div class="inner-box">
           <div class="image">
-            <a href="#"><img src="images/resource/news-11.jpg" alt="" /></a>
+            <a [routerLink]="['/services']"><img src="../../assets/images/resource/news-11.jpg" alt="" /></a>
           </div>
           <div class="lower-content">
             <div class="content">
               <div class="icon-box">
                 <span class="icon flaticon-web"></span>
               </div>
-              <h4><a href="#">QA & Testing</a></h4>
+              <h4><a [routerLink]="['/services']">QA & Testing</a></h4>
               <div class="text">Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.</div>
-             <!-- <a class="read-more" href="#">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
+             <!-- <a class="read-more" [routerLink]="['/services']">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
             </div>
           </div>
         </div>
@@ -145,16 +145,16 @@
       <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
         <div class="inner-box">
           <div class="image">
-            <a href="#"><img src="images/resource/news-12.jpg" alt="" /></a>
+            <a [routerLink]="['/services']"><img src="../../assets/images/resource/news-12.jpg" alt="" /></a>
           </div>
           <div class="lower-content">
             <div class="content">
               <div class="icon-box">
                 <span class="icon flaticon-monitor-2"></span>
               </div>
-              <h4><a href="#">IT Consultancy</a></h4>
-              <div class="text">Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.</div>
-              <!--<a class="read-more" href="#">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
+              <h4><a [routerLink]="['/services']">IT Consultancy</a></h4>
+              <div class="text"> Tailor-made custom software development for your business needs. We help you build THE technological solution for you. IT Outsourcing. </div>
+              <!--<a class="read-more" [routerLink]="['/services']">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
             </div>
           </div>
         </div>
@@ -164,16 +164,16 @@
       <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
         <div class="inner-box">
           <div class="image">
-            <a href="#"><img src="images/resource/news-13.jpg" alt="" /></a>
+            <a [routerLink]="['/services']"><img src="../../assets/images/resource/news-13.jpg" alt="" /></a>
           </div>
           <div class="lower-content">
             <div class="content">
               <div class="icon-box">
                 <span class="icon flaticon-human-resources"></span>
               </div>
-              <h4><a href="#">Dedicated Team</a></h4>
-              <div class="text">Over the past decade, our customers succeeded by leveraging Intellectsoft’s process of building, motivating.</div>
-              <!--<a class="read-more" href="#">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
+              <h4><a [routerLink]="['/services']">Dedicated Team</a></h4>
+              <div class="text">Over the past decade, our customers succeeded by leveraging Giventa’s process of building, motivating.</div>
+              <!--<a class="read-more" [routerLink]="['/services']">Read More<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>-->
             </div>
           </div>
         </div>
@@ -229,9 +229,9 @@
           <div class="icon-box">
             <span class="icon flaticon-responsive"></span>
           </div>
-          <h5><a href="#">IT Solutions</a></h5>
+          <h5><a [routerLink]="['/services']">IT Solutions</a></h5>
           <!--<div class="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-          <a href="#" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
+          <a [routerLink]="['/services']" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
         </div>
       </div>
 
@@ -241,9 +241,9 @@
           <div class="icon-box">
             <span class="icon flaticon-monitor"></span>
           </div>
-          <h5><a href="#">Security System</a></h5>
+          <h5><a [routerLink]="['/services']">Security System</a></h5>
           <!--<div class="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-          <a href="#" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
+          <a [routerLink]="['/services']" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
         </div>
       </div>
 
@@ -253,9 +253,9 @@
           <div class="icon-box">
             <span class="icon flaticon-coding"></span>
           </div>
-          <h5><a href="#">Web Development</a></h5>
+          <h5><a [routerLink]="['/services']">Web Development</a></h5>
           <!--<div class="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-          <a href="#" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
+          <a [routerLink]="['/services']" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
         </div>
       </div>
 
@@ -265,9 +265,9 @@
           <div class="icon-box">
             <span class="icon flaticon-laptop"></span>
           </div>
-          <h5><a href="#">Database Security</a></h5>
+          <h5><a [routerLink]="['/services']">Database Security</a></h5>
           <!--<div class="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-          <a href="#" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
+          <a [routerLink]="['/services']" class="arrow flaticon-long-arrow-pointing-to-the-right"></a>-->
         </div>
       </div>
 
@@ -300,7 +300,7 @@
             <div class="icon-box">
               <span class="icon flaticon-coding-1"></span>
             </div>
-            <h5><a href="#">Web Develpment</a></h5>
+            <h5><a [routerLink]="['/services']">Web Develpment</a></h5>
             <div class="text">We carry more than just good coding skills. Our experience makes us stand out from other web development.</div>
           </div>
         </div>
@@ -313,7 +313,7 @@
             <div class="icon-box">
               <span class="icon flaticon-mobile-app"></span>
             </div>
-            <h5><a href="#">Mobile Development</a></h5>
+            <h5><a [routerLink]="['/services']">Mobile Development</a></h5>
             <div class="text">Create complex enterprise software, ensure reliable software integration, modernise your legacy system.</div>
           </div>
         </div>
@@ -326,7 +326,7 @@
             <div class="icon-box">
               <span class="icon flaticon-computer"></span>
             </div>
-            <h5><a href="#">UI/UX Design</a></h5>
+            <h5><a [routerLink]="['/services']">UI/UX Design</a></h5>
             <div class="text">Build the product you need on time with an experienced team that uses a clear and effective design process.</div>
           </div>
         </div>
@@ -339,7 +339,7 @@
             <div class="icon-box">
               <span class="icon flaticon-web"></span>
             </div>
-            <h5><a href="#">QA & Testing</a></h5>
+            <h5><a [routerLink]="['/services']">QA & Testing</a></h5>
             <div class="text">Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.</div>
           </div>
         </div>
@@ -352,7 +352,7 @@
             <div class="icon-box">
               <span class="icon flaticon-monitor-2"></span>
             </div>
-            <h5><a href="#">IT Counsultancy</a></h5>
+            <h5><a [routerLink]="['/services']">IT Counsultancy</a></h5>
             <div class="text">Trust our top minds to eliminate workflow pain points, implement new tech, and consolidate app portfolios.</div>
           </div>
         </div>
@@ -365,7 +365,7 @@
             <div class="icon-box">
               <span class="icon flaticon-human-resources"></span>
             </div>
-            <h5><a href="#">Dedicated Team</a></h5>
+            <h5><a [routerLink]="['/services']">Dedicated Team</a></h5>
             <div class="text">Over the past decade, our customers succeeded by leveraging Intellectsoft’s process of building, motivating.</div>
           </div>
         </div>
@@ -376,11 +376,11 @@
 </section>
 <!-- End Services Section Two -->
 
-<!-- Appointment Section -->
-<section class="appointment-section style-two">
+<!-- Appointment Form Section -->
+<!--<section class="appointment-section style-two">
   <div class="image-layer" style="background-image: url(../../assets/images/background/4.jpg)"></div>
   <div class="auto-container">
-    <!-- Sec Title -->
+    &lt;!&ndash; Sec Title &ndash;&gt;
     <div class="sec-title light centered">
       <div class="title">CONTACT US</div>
       <h2>Join Us To Get IT Free <br> Consultations</h2>
@@ -388,20 +388,20 @@
     <div class="inner-container">
       <div class="row clearfix">
 
-        <!-- Image Column -->
+        &lt;!&ndash; Image Column &ndash;&gt;
         <div class="image-column col-lg-6 col-md-12 col-sm-12">
           <div class="inner-column wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
             <div class="image">
-              <img src="images/resource/appointment.jpg" alt="" />
+              <img src="../../assets/images/resource/appointment.jpg" alt="" />
             </div>
           </div>
         </div>
 
-        <!-- Form Column -->
+        &lt;!&ndash; Form Column &ndash;&gt;
         <div class="form-column col-lg-6 col-md-12 col-sm-12">
           <div class="inner-column">
             <h4>You Don't Hesitate To Contact <br> With Us, Now Say Hello......</h4>
-            <!-- Appointment Form -->
+            &lt;!&ndash; Appointment Form &ndash;&gt;
             <div class="appointment-form">
               <form method="post" action="appointment.html">
                 <div class="row clearfix">
@@ -442,7 +442,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
 <!-- Info Section -->
 <!--<section class="info-section" style="background-image: url(../../assets/images/background/6.jpg)">

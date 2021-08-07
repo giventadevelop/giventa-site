@@ -733,6 +733,15 @@ img{
 	font-size:16px;
 }
 
+/*custom menu for thesite navigation menu*/
+.navigation-menu{
+  color: #0060ff !important;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .main-header .main-box{
 	position:relative;
 	padding:0px 0px;
