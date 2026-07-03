@@ -141,6 +141,43 @@
     });
   }
 
+  function initSearch($) {
+    $('.search-box-outer')
+      .off('click.globexNext')
+      .on('click.globexNext', function () {
+        $('body').addClass('search-active');
+      });
+
+    $('.search-popup .close-search')
+      .off('click.globexNext')
+      .on('click.globexNext', function () {
+        $('body').removeClass('search-active');
+      });
+  }
+
+  function initSidebar($) {
+    $('.navSidebar-button')
+      .off('click.globexNext')
+      .on('click.globexNext', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('.info-group').addClass('isActive');
+      });
+
+    $('.info-group .close-side-widget, .info-group .xs-overlay')
+      .off('click.globexNext')
+      .on('click.globexNext', function (e) {
+        e.preventDefault();
+        $('.info-group').removeClass('isActive');
+      });
+
+    $('.xs-sidebar-widget')
+      .off('click.globexNext')
+      .on('click.globexNext', function (e) {
+        e.stopPropagation();
+      });
+  }
+
   function initGlobexAfterHydration() {
     var $ = getJQuery();
     if (!$) {
@@ -148,6 +185,8 @@
     }
 
     initNavigation($);
+    initSearch($);
+    initSidebar($);
     initCarousels($);
 
     if ($.fn.appear) {

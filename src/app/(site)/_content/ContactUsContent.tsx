@@ -4,55 +4,6 @@ import { SITE_CONTACT } from '@/lib/siteContact';
 export default function ContactUsContent() {
   return (
     <>
-      {/* Sidebar Cart Item */}
-      <div className="xs-sidebar-group info-group">
-        <div className="xs-overlay xs-bg-black"></div>
-        <div className="xs-sidebar-widget">
-          <div className="sidebar-widget-container">
-            <div className="widget-heading">
-              <a href="#" className="close-side-widget">
-                X
-              </a>
-            </div>
-            <div className="sidebar-textwidget">
-
-              {/* Sidebar Info Content */}
-              <div className="sidebar-info-contents">
-                <div className="content-inner">
-                  <div className="logo">
-                    <a href="/"><img src={SITE_CONTACT.logoSrc} alt="Giventa" width={SITE_CONTACT.logoWidth} height={SITE_CONTACT.logoHeight} /></a>
-                  </div>
-                  <div className="content-box">
-                    <h2>About Us</h2>
-                    <p className="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
-                    <a href="#" className="theme-btn btn-style-two"><span className="txt">Consultation</span></a>
-                  </div>
-                  <div className="contact-info">
-                    <h2>Contact Info</h2>
-                    <ul className="list-style-one">
-                      <li><span className="icon fa fa-location-arrow"></span>{SITE_CONTACT.address}</li>
-                      <li><span className="icon fa fa-phone"></span>{SITE_CONTACT.phone}</li>
-                      <li><span className="icon fa fa-envelope"></span>{SITE_CONTACT.email}</li>
-                      <li><span className="icon fa fa-clock-o"></span>{SITE_CONTACT.hours}</li>
-                    </ul>
-                  </div>
-                  {/* Social Box */}
-                  <ul className="social-box">
-                    <li className="facebook"><a href="#" className="fa fa-facebook-f"></a></li>
-                    <li className="twitter"><a href="#" className="fa fa-twitter"></a></li>
-                    <li className="linkedin"><a href="#" className="fa fa-linkedin"></a></li>
-                    <li className="instagram"><a href="#" className="fa fa-instagram"></a></li>
-                    <li className="youtube"><a href="#" className="fa fa-youtube"></a></li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* END sidebar widget item */}
-
       {/*Page Title*/}
       <section className="page-title">
         <div className="pattern-layer-one" style={{ backgroundImage: 'url(/images/background/pattern-16.png)' }}></div>
@@ -72,7 +23,7 @@ export default function ContactUsContent() {
           {/* Sec Title */}
           <div className="title-box">
             <div className="title">GET IN TOUCH</div>
-            <h2>A Monthly Project Fee <br /> Price Plans</h2>
+            <h2>Contact Giventa Today</h2>
             <div className="text">For genereal enquires you can touch with our front desk supporting team <br /> at <a href={`mailto:${SITE_CONTACT.email}`}>{SITE_CONTACT.email}</a> or call on <a href={SITE_CONTACT.phoneTel}>{SITE_CONTACT.phone}</a></div>
           </div>
 

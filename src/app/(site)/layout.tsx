@@ -3,6 +3,8 @@ import GlobexStaticAssets from '@/components/globex/GlobexStaticAssets';
 import GlobexHeader from '@/components/globex/GlobexHeader';
 import GlobexFooter from '@/components/globex/GlobexFooter';
 import GlobexPreloaderDismiss from '@/components/globex/GlobexPreloaderDismiss';
+import GlobexInfoSidebar from '@/components/globex/GlobexInfoSidebar';
+import GlobexSearchPopup from '@/components/globex/GlobexSearchPopup';
 import '@/styles/globex-shell.css';
 
 export const metadata: Metadata = {
@@ -22,6 +24,8 @@ export default function SiteLayout({
         <div className="preloader" />
         <GlobexPreloaderDismiss />
         <GlobexHeader />
+        <GlobexInfoSidebar />
+        <GlobexSearchPopup />
         <main className="globex-main">{children}</main>
         <GlobexFooter />
       </div>

@@ -1,5 +1,6 @@
 /* Auto-generated from app.component.html */
 import GlobexLogo from '@/components/globex/GlobexLogo';
+import GlobexSocialLinks from '@/components/globex/GlobexSocialLinks';
 import { SITE_CONTACT } from '@/lib/siteContact';
 
 export default function GlobexFooter() {
@@ -27,12 +28,7 @@ export default function GlobexFooter() {
                         </div>
                         <div className="text">We are the best world Information Technology Company. Providing the highest quality in hardware & Network solutions. About more than 25 years of experience and 1000 of innovative achievements.</div>
                         {/* Social Box */}
-                        <ul className="social-box">
-                          <li><a href="#" className="fa fa-facebook-f"></a></li>
-                          <li><a href="#" className="fa fa-linkedin"></a></li>
-                          <li><a href="#" className="fa fa-twitter"></a></li>
-                          <li><a href="#" className="fa fa-google"></a></li>
-                        </ul>
+                        <GlobexSocialLinks variant="footer" />
                       </div>
                     </div>
 
@@ -62,7 +58,7 @@ export default function GlobexFooter() {
                     {/* Footer Column */}
                     <div className="footer-column col-lg-6 col-md-6 col-sm-12">
                       <div className="footer-widget news-widget">
-                        <h5>Resent Post</h5>
+                        <h5>Recent Posts</h5>
                         {/* Footer Column */}
                         <div className="widget-content">
                           <div className="post">

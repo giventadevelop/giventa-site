@@ -1,62 +1,8 @@
 /* Auto-generated from Angular template — do not edit by hand; run npm run convert:templates */
-import { SITE_CONTACT } from '@/lib/siteContact';
 
 export default function HomeContent() {
   return (
     <>
-      <div className="page-wrapper">
-
-
-
-        {/* Sidebar Cart Item */}
-        <div className="xs-sidebar-group info-group">
-          <div className="xs-overlay xs-bg-black"></div>
-          <div className="xs-sidebar-widget">
-            <div className="sidebar-widget-container">
-              <div className="widget-heading">
-                <a href="#" className="close-side-widget">
-                  X
-                </a>
-              </div>
-              <div className="sidebar-textwidget">
-
-                {/* Sidebar Info Content */}
-                <div className="sidebar-info-contents">
-                  <div className="content-inner">
-                    <div className="logo">
-                      <a href="/"><img src={SITE_CONTACT.logoSrc} alt="Giventa" width={SITE_CONTACT.logoWidth} height={SITE_CONTACT.logoHeight} /></a>
-                    </div>
-                    <div className="content-box">
-                      <h2>About Us</h2>
-                      <p className="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
-                      <a href="#" className="theme-btn btn-style-two"><span className="txt">Consultation</span></a>
-                    </div>
-                    <div className="contact-info">
-                      <h2>Contact Info</h2>
-                      <ul className="list-style-one">
-                        <li><span className="icon fa fa-location-arrow"></span>{SITE_CONTACT.address}</li>
-                        <li><span className="icon fa fa-phone"></span>{SITE_CONTACT.phone}</li>
-                        <li><span className="icon fa fa-envelope"></span>{SITE_CONTACT.email}</li>
-                        <li><span className="icon fa fa-clock-o"></span>{SITE_CONTACT.hours}</li>
-                      </ul>
-                    </div>
-                    {/* Social Box */}
-                    <ul className="social-box">
-                      <li className="facebook"><a href="#" className="fa fa-facebook-f"></a></li>
-                      <li className="twitter"><a href="#" className="fa fa-twitter"></a></li>
-                      <li className="linkedin"><a href="#" className="fa fa-linkedin"></a></li>
-                      <li className="instagram"><a href="#" className="fa fa-instagram"></a></li>
-                      <li className="youtube"><a href="#" className="fa fa-youtube"></a></li>
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* END sidebar widget item */}
-
         {/* Banner Section */}
         <section className="banner-section">
           <div className="main-slider-carousel owl-carousel owl-theme">
@@ -225,70 +171,6 @@ export default function HomeContent() {
         </section>
         {/* End Featured Section */}
 
-        {/* Services Section */}
-        <section className="services-section margin-top">
-          <div className="pattern-layer" style={{ backgroundImage: 'url(/images/background/pattern-2.png)' }}></div>
-          <div className="auto-container">
-            {/* Sec Title */}
-            <div className="sec-title light centered">
-              <div className="title">WHO WE ARE</div>
-              <h2>We deal with the aspects of <br /> professional IT Services</h2>
-            </div>
-            <div className="row clearfix">
-
-              {/* Service Block */}
-              <div className="service-block col-lg-3 col-md-6 col-sm-12">
-                <div className="inner-box">
-                  <div className="icon-box">
-                    <span className="icon flaticon-responsive"></span>
-                  </div>
-                  <h5><a href="services-detail.html">IT Soluations</a></h5>
-                  <div className="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-                  <a href="services-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
-                </div>
-              </div>
-
-              {/* Service Block */}
-              <div className="service-block col-lg-3 col-md-6 col-sm-12">
-                <div className="inner-box">
-                  <div className="icon-box">
-                    <span className="icon flaticon-monitor"></span>
-                  </div>
-                  <h5><a href="services-detail.html">Security System</a></h5>
-                  <div className="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-                  <a href="services-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
-                </div>
-              </div>
-
-              {/* Service Block */}
-              <div className="service-block col-lg-3 col-md-6 col-sm-12">
-                <div className="inner-box">
-                  <div className="icon-box">
-                    <span className="icon flaticon-coding"></span>
-                  </div>
-                  <h5><a href="services-detail.html">Web Development</a></h5>
-                  <div className="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-                  <a href="services-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
-                </div>
-              </div>
-
-              {/* Service Block */}
-              <div className="service-block col-lg-3 col-md-6 col-sm-12">
-                <div className="inner-box">
-                  <div className="icon-box">
-                    <span className="icon flaticon-laptop"></span>
-                  </div>
-                  <h5><a href="services-detail.html">Database Security</a></h5>
-                  <div className="text">Sed ut perspiciatis unde omnis iste natus error volup validate your ideas.</div>
-                  <a href="services-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-        {/* End Services Section */}
-
         {/* Services Section Two */}
         <section className="services-section-two margin-top">
           <div className="auto-container">
@@ -415,8 +297,8 @@ export default function HomeContent() {
           <div className="auto-container">
             {/* Sec Title */}
             <div className="sec-title centered">
-              <div className="title">LATEST CASE STUDIES</div>
-              <h2>Reads Now Our Recent <br /> Projects Studies</h2>
+              <div className="title">OUR RECENT PROJECTS</div>
+              <h2>Explore Our Latest <br /> Case Studies</h2>
             </div>
             <div className="row clearfix">
 
@@ -546,8 +428,8 @@ export default function HomeContent() {
             <div className="sec-title">
               <div className="clearfix">
                 <div className="pull-left">
-                  <div className="title">LATEST CASE STUDIES</div>
-                  <h2>Reads Now Our Recent <br /> Projects Studies</h2>
+                  <div className="title">TESTIMONIALS</div>
+                  <h2>What Our Clients <br /> Say About Us</h2>
                 </div>
                 <div className="pull-right">
                   <div className="text">Our goal is to help our companies maintain or achieve best- in-class <br /> positions in their respective industries and our team works.</div>
@@ -920,57 +802,6 @@ export default function HomeContent() {
           </div>
         </section>
         {/* End News Section */}
-
-
-
-      </div>
-      {/*End pagewrapper*/}
-
-      {/* Color Palate / Color Switcher */}
-
-      <div className="color-palate">
-        <div className="color-trigger">
-          <i className="fa fa-gear"></i>
-        </div>
-        <div className="color-palate-head">
-          <h6>Choose Your Color</h6>
-        </div>
-
-        <div className="various-color clearfix">
-          <div className="colors-list">
-            <span className="palate default-color active" data-theme-file="css/color-themes/default-theme.css"></span>
-            <span className="palate green-color" data-theme-file="css/color-themes/green-theme.css"></span>
-            <span className="palate olive-color" data-theme-file="css/color-themes/olive-theme.css"></span>
-            <span className="palate orange-color" data-theme-file="css/color-themes/orange-theme.css"></span>
-            <span className="palate purple-color" data-theme-file="css/color-themes/purple-theme.css"></span>
-            <span className="palate teal-color" data-theme-file="css/color-themes/teal-theme.css"></span>
-            <span className="palate brown-color" data-theme-file="css/color-themes/brown-theme.css"></span>
-            <span className="palate redd-color" data-theme-file="css/color-themes/redd-color.css"></span>
-          </div>
-        </div>
-
-        <ul className="rtl-version option-box"> <li className="rtl">RTL Version</li> <li>LTR Version</li> </ul>
-
-        <a href="#" className="purchase-btn">Purchase now $17</a>
-
-        <div className="palate-foo">
-          <span>You will find much more options for colors and styling in admin panel. This color picker is used only for demonstation purposes.</span>
-        </div>
-
-      </div>
-
-      {/* Search Popup */}
-      <div className="search-popup">
-        <button className="close-search style-two"><span className="flaticon-multiply"></span></button>
-        <button className="close-search"><span className="flaticon-up-arrow-1"></span></button>
-        <form method="post" action="blog.html">
-          <div className="form-group">
-            <input type="search" name="search-field" defaultValue="" placeholder="Search Here" required />
-            <button type="submit"><i className="fa fa-search"></i></button>
-          </div>
-        </form>
-      </div>
-      {/* End Header Search */}
 
       {/*Scroll to top*/}
       <div className="scroll-to-top scroll-to-target" data-target="html"><span className="fa fa-arrow-up"></span></div>

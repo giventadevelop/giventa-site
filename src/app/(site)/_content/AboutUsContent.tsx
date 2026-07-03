@@ -1,58 +1,8 @@
 /* Auto-generated from Angular template — do not edit by hand; run npm run convert:templates */
-import { SITE_CONTACT } from '@/lib/siteContact';
 
 export default function AboutUsContent() {
   return (
     <>
-      {/* Sidebar Cart Item */}
-      <div className="xs-sidebar-group info-group">
-        <div className="xs-overlay xs-bg-black"></div>
-        <div className="xs-sidebar-widget">
-          <div className="sidebar-widget-container">
-            <div className="widget-heading">
-              <a href="#" className="close-side-widget">
-                X
-              </a>
-            </div>
-            <div className="sidebar-textwidget">
-
-              {/* Sidebar Info Content */}
-              <div className="sidebar-info-contents">
-                <div className="content-inner">
-                  <div className="logo">
-                    <a href="/"><img src={SITE_CONTACT.logoSrc} alt="Giventa" width={SITE_CONTACT.logoWidth} height={SITE_CONTACT.logoHeight} /></a>
-                  </div>
-                  <div className="content-box">
-                    <h2>About Us</h2>
-                    <p className="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
-                    <a href="#" className="theme-btn btn-style-two"><span className="txt">Consultation</span></a>
-                  </div>
-                  <div className="contact-info">
-                    <h2>Contact Info</h2>
-                    <ul className="list-style-one">
-                      <li><span className="icon fa fa-location-arrow"></span>{SITE_CONTACT.address}</li>
-                      <li><span className="icon fa fa-phone"></span>{SITE_CONTACT.phone}</li>
-                      <li><span className="icon fa fa-envelope"></span>{SITE_CONTACT.email}</li>
-                      <li><span className="icon fa fa-clock-o"></span>{SITE_CONTACT.hours}</li>
-                    </ul>
-                  </div>
-                  {/* Social Box */}
-                  <ul className="social-box">
-                    <li className="facebook"><a href="#" className="fa fa-facebook-f"></a></li>
-                    <li className="twitter"><a href="#" className="fa fa-twitter"></a></li>
-                    <li className="linkedin"><a href="#" className="fa fa-linkedin"></a></li>
-                    <li className="instagram"><a href="#" className="fa fa-instagram"></a></li>
-                    <li className="youtube"><a href="#" className="fa fa-youtube"></a></li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* END sidebar widget item */}
-
       {/*Page Title*/}
       <section className="page-title">
         <div className="pattern-layer-one" style={{ backgroundImage: 'url(/images/background/pattern-16.png)' }}></div>
@@ -102,7 +52,7 @@ export default function AboutUsContent() {
 
                 </div>
 
-                <a href="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image theme-btn btn-style-one"><span className="txt"><i className="play-icon"><img src="/images/icons/play-icon.png" alt="" /></i>&ensp; intro Video</span></a>
+                <a href="/contact-us" className="theme-btn btn-style-one"><span className="txt"><i className="play-icon"><img src="/images/icons/play-icon.png" alt="" /></i>&ensp; Schedule a Consultation</span></a>
 
               </div>
             </div>
@@ -126,7 +76,6 @@ export default function AboutUsContent() {
                   </div>
                 </div>
               </div>
-              <a href="/about-us" className="learn"><span className="arrow flaticon-long-arrow-pointing-to-the-right"></span>Learn More About Company</a>
             </div>
 
           </div>
@@ -218,7 +167,7 @@ export default function AboutUsContent() {
 
                 {/* Sec Title */}
                 <div className="sec-title light">
-                  <div className="title">About Globax</div>
+                  <div className="title">About Giventa</div>
                   <h2>Transform Your Business With The Leading IT Solution rovider.</h2>
                   <div className="text">We listen. We advise. We design, together. Happy customers and ongoing relationships are what we strive for. Success is measured by results, the most important being how our clients feel about their experience with us.</div>
                 </div>
@@ -309,9 +258,9 @@ export default function AboutUsContent() {
             <div className="process-block col-lg-4 col-md-6 col-sm-12">
               <div className="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                 <div className="number-box">01</div>
-                <h4><a href="services-detail.html">End to End Solutions and Services Guaranteed</a></h4>
-                <div className="text">Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. per inceptos himenaeos.</div>
-                <a className="read-more" href="services-detail.html"><span className="arrow flaticon-long-arrow-pointing-to-the-right"></span>Read More</a>
+                <h4><a href="/services/web-development">End to End Solutions and Services Guaranteed</a></h4>
+                <div className="text">From discovery through deployment, we deliver complete IT solutions tailored to your business goals and timeline.</div>
+                <a className="read-more" href="/services/web-development"><span className="arrow flaticon-long-arrow-pointing-to-the-right"></span>Read More</a>
               </div>
             </div>
 
@@ -319,9 +268,9 @@ export default function AboutUsContent() {
             <div className="process-block col-lg-4 col-md-6 col-sm-12">
               <div className="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                 <div className="number-box">02</div>
-                <h4><a href="services-detail.html">Ahead of The Curve We Future-proof Your IT</a></h4>
-                <div className="text">Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. per inceptos himenaeos.</div>
-                <a className="read-more" href="services-detail.html"><span className="arrow flaticon-long-arrow-pointing-to-the-right"></span>Read More</a>
+                <h4><a href="/services/it-consultancy">Ahead of The Curve We Future-proof Your IT</a></h4>
+                <div className="text">We help you adopt modern platforms, cloud services, and security practices that keep your infrastructure resilient.</div>
+                <a className="read-more" href="/services/it-consultancy"><span className="arrow flaticon-long-arrow-pointing-to-the-right"></span>Read More</a>
               </div>
             </div>
 
@@ -329,9 +278,9 @@ export default function AboutUsContent() {
             <div className="process-block col-lg-4 col-md-6 col-sm-12">
               <div className="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                 <div className="number-box">03</div>
-                <h4><a href="services-detail.html">Experience Certainty Every Project Executed Successful</a></h4>
-                <div className="text">Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. per inceptos himenaeos.</div>
-                <a className="read-more" href="services-detail.html"><span className="arrow flaticon-long-arrow-pointing-to-the-right"></span>Read More</a>
+                <h4><a href="/services/qa-testing">Experience Certainty Every Project Executed Successful</a></h4>
+                <div className="text">Structured delivery, transparent milestones, and quality gates ensure every project is executed on time and on budget.</div>
+                <a className="read-more" href="/services/qa-testing"><span className="arrow flaticon-long-arrow-pointing-to-the-right"></span>Read More</a>
               </div>
             </div>
 
@@ -444,7 +393,7 @@ export default function AboutUsContent() {
                     <h4>HTML Website Development Services</h4>
                     <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
                     <div className="btn-box text-center">
-                      <a href="services-detail.html" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
+                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
                   </div>
                 </div>
@@ -455,7 +404,7 @@ export default function AboutUsContent() {
                     <h4>Bootstrap Website Development Services</h4>
                     <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
                     <div className="btn-box text-center">
-                      <a href="services-detail.html" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
+                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
                   </div>
                 </div>
@@ -466,7 +415,7 @@ export default function AboutUsContent() {
                     <h4>CSS Website Development Services</h4>
                     <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
                     <div className="btn-box text-center">
-                      <a href="services-detail.html" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
+                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
                   </div>
                 </div>
@@ -477,7 +426,7 @@ export default function AboutUsContent() {
                     <h4>Php Website Development Services</h4>
                     <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
                     <div className="btn-box text-center">
-                      <a href="services-detail.html" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
+                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
                   </div>
                 </div>
@@ -488,7 +437,7 @@ export default function AboutUsContent() {
                     <h4>JavaScript Website Development Services</h4>
                     <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
                     <div className="btn-box text-center">
-                      <a href="services-detail.html" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
+                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
                   </div>
                 </div>

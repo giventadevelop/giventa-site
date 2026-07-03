@@ -57,3 +57,55 @@
   display: inline-flex;
   align-items: center;
 }
+
+/* Footer quick links — remove template strike-through on hover */
+.globex-layout .main-footer .list-link li a:hover {
+  text-decoration: none;
+}
+
+/* X (Twitter) social icon */
+.globex-layout .globex-social-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+/* Mobile: single hamburger — hide info sidebar trigger; desktop keeps sidebar btn */
+@media (max-width: 991px) {
+  .globex-layout .main-header .header-upper .nav-btn.navSidebar-button,
+  .globex-layout .sticky-header .nav-btn.navSidebar-button {
+    display: none !important;
+  }
+}
+
+/* Header action order: search, CTA, sidebar (desktop) */
+.globex-layout .main-header .header-upper .outer-box,
+.globex-layout .sticky-header .outer-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.globex-layout .main-header .header-upper .outer-box .btn-box,
+.globex-layout .sticky-header .outer-box .btn-box {
+  order: 2;
+}
+
+.globex-layout .main-header .header-upper .outer-box .search-box-btn,
+.globex-layout .sticky-header .outer-box .search-box-btn {
+  order: 1;
+}
+
+.globex-layout .main-header .header-upper .outer-box .nav-btn,
+.globex-layout .sticky-header .outer-box .nav-btn {
+  order: 3;
+}
+
+.globex-layout .color-palate {
+  display: none !important;
+}
