@@ -1,0 +1,59 @@
+/* Shell overrides for Globex legacy markup inside Next.js */
+.globex-layout .page-wrapper {
+  overflow-x: hidden;
+}
+
+/* Ensure desktop navigation stays visible (Bootstrap collapse + Tailwind reset) */
+.globex-layout .main-header .main-menu {
+  display: block;
+}
+
+.globex-layout .main-menu .navbar-collapse {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+}
+
+.globex-layout .main-menu .navigation {
+  display: block;
+}
+
+.globex-layout .main-menu .navigation > li {
+  display: list-item;
+}
+
+.globex-layout .main-menu .navigation > li > a {
+  display: block;
+}
+
+/* Hero slider — inline background-image needs cover + min-height */
+.globex-layout .banner-section .slide,
+.globex-layout .banner-section .owl-item .slide {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 520px;
+}
+
+.globex-layout .banner-section .owl-carousel .owl-stage-outer,
+.globex-layout .banner-section .owl-carousel .owl-stage,
+.globex-layout .banner-section .owl-carousel .owl-item {
+  min-height: 520px;
+}
+
+/* Case study wide tiles */
+.globex-layout .cases-section .case-block .image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+/* Header logo */
+.globex-layout .main-header .logo-box .logo a,
+.globex-layout .sticky-header .logo a,
+.globex-layout .mobile-menu .nav-logo a {
+  display: inline-flex;
+  align-items: center;
+}

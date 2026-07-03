@@ -1,0 +1,33 @@
+{
+  "name": "giventa-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
+    "dev": "next dev",
+    "dev:clean": "npm run clean && next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "convert:templates": "node scripts/convert-angular-templates.mjs",
+    "copy:images": "node scripts/copy-images.mjs",
+    "fetch:images": "node scripts/fetch-giventa-images.mjs",
+    "fix:placeholders": "node scripts/replace-placeholder-images.mjs"
+  },
+  "dependencies": {
+    "next": "^15.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.3.3",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Globex pages use legacy CSS from public/globex/assets — keep globals minimal */
+body.globex-site {
+  margin: 0;
+}

@@ -1,0 +1,4 @@
+# Model A — Shared Publisher ID (giventa.com / Google AdSense owner account).
+# Must be served at https://giventa.com/ads.txt
+# See mosc-temp/documentation/tenant_management/google_adsense_integration/google_adsense_shared_publisher_giventa.html
+google.com, pub-1016198353275904, DIRECT, f08c47fec0942fa0
