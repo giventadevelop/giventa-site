@@ -1,5 +1,6 @@
 /* Auto-generated from Angular template — do not edit by hand; run npm run convert:templates */
 import { SITE_CONTACT } from '@/lib/siteContact';
+import GlobexContactForm from '@/components/globex/GlobexContactForm';
 
 export default function ContactUsContent() {
   return (
@@ -110,44 +111,7 @@ export default function ContactUsContent() {
           </div>
 
           {/* Contact Form */}
-          <div className="contact-form">
-
-            {/* Contact Form */}
-            <form method="post" action="sendemail.php" id="contact-form">
-              <div className="row clearfix">
-
-                <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                  <label>Your name *</label>
-                  <input type="text" name="username" placeholder="" required />
-                </div>
-
-                <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                  <label>Email address *</label>
-                  <input type="text" name="email" placeholder="" required />
-                </div>
-
-                <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                  <label>Phone number *</label>
-                  <input type="text" name="phone" placeholder="" required />
-                </div>
-
-                <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                  <label>Website</label>
-                  <input type="text" name="subject" placeholder="" required />
-                </div>
-
-                <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                  <label>Your Message *</label>
-                  <textarea name="message" placeholder=""></textarea>
-                </div>
-
-                <div className="form-group text-center col-lg-12 col-md-12 col-sm-12">
-                  <button className="theme-btn btn-style-three" type="submit" name="submit-form"><span className="txt">Send Now</span></button>
-                </div>
-
-              </div>
-            </form>
-          </div>
+          <GlobexContactForm variant="contact" formId="contact-form" />
           {/* End Contact Form */}
 
         </div>

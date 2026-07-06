@@ -60,8 +60,8 @@
 	}
 	
 	
-	//Mobile Nav Hide Show
-	if($('.mobile-menu').length){
+	//Mobile Nav Hide Show — skipped on Next.js site (globex-next-init.js syncs after React hydration)
+	if($('.mobile-menu').length && !window.__GLOBEX_NEXT_SITE__){
 		
 		$('.mobile-menu .menu-box').mCustomScrollbar();
 		
@@ -686,8 +686,8 @@
 	}
 	
 	
-	//Contact Form Validation
-	if($('#contact-form').length){
+	//Contact Form Validation — skip on Next.js site (React handles validation/submit)
+	if($('#contact-form').length && !window.__GLOBEX_NEXT_SITE__){
 		$('#contact-form').validate({
 			rules: {
 				username: {

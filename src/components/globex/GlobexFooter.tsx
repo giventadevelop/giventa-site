@@ -1,7 +1,30 @@
-/* Auto-generated from app.component.html */
+import Link from 'next/link';
 import GlobexLogo from '@/components/globex/GlobexLogo';
 import GlobexSocialLinks from '@/components/globex/GlobexSocialLinks';
 import { SITE_CONTACT } from '@/lib/siteContact';
+
+const FOOTER_QUICK_LINKS = [
+  { label: 'Managed IT services', href: '/services/it-consultancy' },
+  { label: 'Cloud Services', href: '/services' },
+  { label: 'IT support & helpdesk', href: '/services/it-consultancy' },
+  { label: 'Cyber security', href: '/services/qa-testing' },
+  { label: 'Custom Software', href: '/services/web-development' },
+  { label: 'Free Consultation', href: '/contact-us' },
+  { label: 'Our Business Growth', href: '/about-us' },
+] as const;
+
+const FOOTER_RECENT_POSTS = [
+  {
+    title: 'Agentic Frameworks for Modern Enterprise Apps',
+    image: '/images/resource/post-thumb-3.jpg',
+    date: 'Jul 01, 2026',
+  },
+  {
+    title: 'AI Automation Strategies for Business Growth',
+    image: '/images/resource/post-thumb-4.jpg',
+    date: 'Jun 15, 2026',
+  },
+] as const;
 
 export default function GlobexFooter() {
   return (
@@ -37,13 +60,11 @@ export default function GlobexFooter() {
                       <div className="footer-widget links-widget">
                         <h5>Quick Links</h5>
                         <ul className="list-link">
-                          <li><a href="">Managed IT services</a></li>
-                          <li><a href="">Cloud Services</a></li>
-                          <li><a href="">IT support & helpdesk</a></li>
-                          <li><a href="">Cyber security</a></li>
-                          <li><a href="">Custom Software</a></li>
-                          <li><a href="">Free Consultation</a></li>
-                          <li><a href="">Our Business Growth</a></li>
+                          {FOOTER_QUICK_LINKS.map(({ label, href }) => (
+                            <li key={label}>
+                              <Link href={href}>{label}</Link>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -61,17 +82,19 @@ export default function GlobexFooter() {
                         <h5>Recent Posts</h5>
                         {/* Footer Column */}
                         <div className="widget-content">
-                          <div className="post">
-                            <div className="thumb"><a href="news-detail.html"><img src="/images/resource/post-thumb-3.jpg" alt="" /></a></div>
-                            <h6><a href="news-detail.html">Define World Best IT Solution Technology</a></h6>
-                            <span className="date">May 01, 2020</span>
-                          </div>
-
-                          <div className="post">
-                            <div className="thumb"><a href="news-detail.html"><img src="/images/resource/post-thumb-4.jpg" alt="" /></a></div>
-                            <h6><a href="news-detail.html">PHP Frameworks You Need To Use Anywhere</a></h6>
-                            <span className="date">May 01, 2020</span>
-                          </div>
+                          {FOOTER_RECENT_POSTS.map(({ title, image, date }) => (
+                            <div className="post" key={title}>
+                              <div className="thumb">
+                                <Link href="/">
+                                  <img src={image} alt="" />
+                                </Link>
+                              </div>
+                              <h6>
+                                <Link href="/">{title}</Link>
+                              </h6>
+                              <span className="date">{date}</span>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -117,8 +140,8 @@ export default function GlobexFooter() {
                   {/* Column */}
                   <div className="column col-lg-6 col-md-12 col-sm-12">
                     <ul className="footer-nav">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Services</a></li>
+                      <li><Link href="/about-us">About Us</Link></li>
+                      <li><Link href="/services">Services</Link></li>
                       <li><a href="#">Privacy</a></li>
                     </ul>
                   </div>

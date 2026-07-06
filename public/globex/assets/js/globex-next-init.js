@@ -10,17 +10,25 @@
   }
 
   function initNavigation($) {
-    if (!$('.mobile-menu').length || !$('.main-header .nav-outer .main-menu').length) {
+    if (!$('.mobile-menu').length || !$('.main-header .nav-outer .main-menu .navigation').length) {
       return;
     }
 
-    var menuHtml = $('.main-header .nav-outer .main-menu').html();
+    if (window.__globexNavSynced) {
+      return;
+    }
+
+    // Clone only the nav list — not the full .main-menu (React owns navbar/header markup).
+    var $sourceNav = $('.main-header .nav-outer .main-menu .navigation').first();
+    var menuHtml = $sourceNav.prop('outerHTML');
     if (!menuHtml || !menuHtml.trim()) {
       return;
     }
 
-    $('.mobile-menu .menu-box .menu-outer').empty().append(menuHtml);
-    $('.sticky-header .main-menu').empty().append(menuHtml);
+    window.__globexNavSynced = true;
+
+    $('.mobile-menu .menu-box .menu-outer').empty().html(menuHtml);
+    $('.sticky-header .main-menu').empty().html(menuHtml);
 
     $('.mobile-nav-toggler')
       .off('click.globexNext')
@@ -41,6 +49,35 @@
         $(this).prev('ul').slideToggle(500);
       });
   }
+
+  function syncNavigationFromDom($) {
+    if (!$('.mobile-menu').length || !$('.main-header .nav-outer .main-menu .navigation').length) {
+      return;
+    }
+
+    var $sourceNav = $('.main-header .nav-outer .main-menu .navigation').first();
+    var menuHtml = $sourceNav.prop('outerHTML');
+    if (!menuHtml || !menuHtml.trim()) {
+      return;
+    }
+
+    $('.mobile-menu .menu-box .menu-outer').empty().html(menuHtml);
+    $('.sticky-header .main-menu').empty().html(menuHtml);
+
+    $('.mobile-menu li.dropdown .dropdown-btn')
+      .off('click.globexNext')
+      .on('click.globexNext', function () {
+        $(this).toggleClass('open');
+        $(this).prev('ul').slideToggle(500);
+      });
+  }
+
+  window.__globexSyncNavigation = function () {
+    var $ = getJQuery();
+    if ($) {
+      syncNavigationFromDom($);
+    }
+  };
 
   function initOwl($, selector, options) {
     var $el = $(selector);

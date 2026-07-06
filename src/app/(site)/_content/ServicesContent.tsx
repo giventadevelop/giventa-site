@@ -1,5 +1,6 @@
 /* Auto-generated from Angular template — do not edit by hand; run npm run convert:templates */
 import { SITE_CONTACT } from '@/lib/siteContact';
+import GlobexContactForm from '@/components/globex/GlobexContactForm';
 
 export default function ServicesContent() {
   return (
@@ -35,7 +36,6 @@ export default function ServicesContent() {
                     </div>
                     <h4><a href="services-detail.html">Web Development</a></h4>
                     <div className="text">We carry more than just good coding skills. Our experience makes us stand out from other web development.</div>
-                    <a className="read-more" href="services-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
                   </div>
                 </div>
               </div>
@@ -49,9 +49,8 @@ export default function ServicesContent() {
                     <div className="icon-box">
                       <span className="icon flaticon-mobile-app"></span>
                     </div>
-                    <h4><a href="services-detail.html">Web Development</a></h4>
-                    <div className="text">We carry more than just good coding skills. Our experience makes us stand out from other web development.</div>
-                    <a className="read-more" href="services-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
+                    <h4><a href="services-detail.html">AI Development</a></h4>
+                    <div className="text">Build intelligent products with agentic frameworks, LLM integrations, and AI automation tailored to your workflows.</div>
                   </div>
                 </div>
                 <div className="image">
@@ -73,7 +72,6 @@ export default function ServicesContent() {
                     </div>
                     <h4><a href="services-detail.html">UI/UX Design</a></h4>
                     <div className="text">Build the product you need on time with an experienced team that uses a clear and effective design process.</div>
-                    <a className="read-more" href="services-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
                   </div>
                 </div>
               </div>
@@ -92,7 +90,6 @@ export default function ServicesContent() {
                     </div>
                     <h4><a href="services-detail.html">QA & Testing</a></h4>
                     <div className="text">Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.</div>
-                    <a className="read-more" href="services-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
                   </div>
                 </div>
               </div>
@@ -111,7 +108,6 @@ export default function ServicesContent() {
                     </div>
                     <h4><a href="services-detail.html">IT Consultancy</a></h4>
                     <div className="text">Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.</div>
-                    <a className="read-more" href="services-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
                   </div>
                 </div>
               </div>
@@ -130,7 +126,6 @@ export default function ServicesContent() {
                     </div>
                     <h4><a href="services-detail.html">Dedicated Team</a></h4>
                     <div className="text">Over the past decade, our customers succeeded by leveraging Intellectsoft’s process of building, motivating.</div>
-                    <a className="read-more" href="services-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
                   </div>
                 </div>
               </div>
@@ -194,40 +189,7 @@ export default function ServicesContent() {
               <div className="form-column col-lg-6 col-md-12 col-sm-12">
                 <div className="inner-column">
                   <h4>You Don't Hesitate To Contact <br /> With Us, Now Say Hello......</h4>
-                  {/* Appointment Form */}
-                  <div className="appointment-form">
-                    <form method="post" action="appointment.html">
-                      <div className="row clearfix">
-                        <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                          <input type="text" name="username" placeholder="Name" required />
-                          <span className="icon fa fa-user"></span>
-                        </div>
-
-                        <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                          <input type="email" name="email" placeholder="Email" required />
-                          <span className="icon fa fa-envelope"></span>
-                        </div>
-
-                        <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                          <input type="tel" name="phone" placeholder="Phone No" required />
-                          <span className="icon fa fa-phone"></span>
-                        </div>
-
-                        <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                          <input type="text" name="department" placeholder="Department" required />
-                          <span className="icon fa fa-home"></span>
-                        </div>
-
-                        <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                          <textarea name="message" placeholder="Message"></textarea>
-                        </div>
-
-                        <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                          <button className="theme-btn btn-style-three" type="submit" name="submit-form"><span className="txt">Send Massage</span></button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+                  <GlobexContactForm variant="appointment" formId="appointment-form" />
 
                 </div>
               </div>

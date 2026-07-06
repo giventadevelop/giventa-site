@@ -28,6 +28,9 @@ export default function GlobexStaticAssets() {
       <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
       <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
+      <Script id="globex-next-site-flag" strategy="beforeInteractive">
+        {`window.__GLOBEX_NEXT_SITE__ = true;`}
+      </Script>
       <Script src={`${base}/js/jquery.js`} strategy="beforeInteractive" />
       <Script src={`${base}/js/popper.min.js`} strategy="afterInteractive" />
       <Script src={`${base}/js/bootstrap.min.js`} strategy="afterInteractive" />

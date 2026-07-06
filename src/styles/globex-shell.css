@@ -106,6 +106,336 @@
   order: 3;
 }
 
+.globex-layout .main-header .header-upper .outer-box .globex-header-auth,
+.globex-layout .sticky-header .outer-box .globex-header-auth,
+.globex-layout .header-top .top-right .globex-header-auth {
+  order: 0;
+  display: inline-flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-right: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep auth visible when Globex theme hides the CTA button (max-width: 1140px) */
+@media only screen and (max-width: 1140px) {
+  .globex-layout .main-header .header-upper .outer-box .globex-header-auth,
+  .globex-layout .sticky-header .outer-box .globex-header-auth {
+    display: inline-flex !important;
+  }
+}
+
+.globex-layout .globex-header-auth__sign-in,
+.globex-layout .globex-header-auth__sign-up {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  line-height: 1.2;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.globex-layout .globex-header-auth--desktop .globex-header-auth__sign-in,
+.globex-layout .globex-header-auth--desktop .globex-header-auth__sign-up,
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-in,
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-up {
+  min-height: 36px;
+  padding: 6px 12px;
+}
+
+.globex-layout .globex-header-auth--desktop .globex-header-auth__sign-in,
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-in {
+  color: #374151;
+}
+
+.globex-layout .globex-header-auth--desktop .globex-header-auth__sign-in:hover,
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-in:hover {
+  color: #111827;
+}
+
+.globex-layout .globex-header-auth--desktop .globex-header-auth__sign-up,
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-up {
+  color: #fff;
+  background: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 4px;
+}
+
+.globex-layout .globex-header-auth--desktop .globex-header-auth__sign-up:hover,
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-up:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-in {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.globex-layout .globex-header-auth--topbar .globex-header-auth__sign-in:hover {
+  color: #fff;
+}
+
+.globex-layout .globex-header-auth__admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #374151;
+  text-decoration: none !important;
+}
+
+.globex-layout .globex-header-auth__admin-link:hover,
+.globex-layout .globex-header-auth__admin-link.is-active {
+  color: #2563eb;
+}
+
+.globex-layout .globex-admin-dropdown {
+  position: relative;
+}
+
+.globex-layout .globex-admin-dropdown__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 15rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 8px 0;
+  border-radius: 8px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 60;
+}
+
+.globex-layout .globex-admin-dropdown:hover .globex-admin-dropdown__panel,
+.globex-layout .globex-admin-dropdown:focus-within .globex-admin-dropdown__panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.globex-layout .globex-admin-dropdown__panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.globex-layout .globex-admin-dropdown__panel a,
+.globex-layout .globex-admin-dropdown__label {
+  display: block;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none !important;
+}
+
+.globex-layout .globex-admin-dropdown__panel a:hover,
+.globex-layout .globex-admin-dropdown__panel a.is-active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.globex-layout .globex-admin-dropdown__label {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 11px;
+}
+
+.globex-layout .globex-user-menu {
+  position: relative;
+}
+
+.globex-layout .globex-user-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 2px solid #d1d5db;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.globex-layout .globex-user-menu__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.globex-layout .globex-user-menu__avatar--fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.globex-layout .globex-user-menu__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 10rem;
+  padding: 6px 0;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 60;
+}
+
+.globex-layout .globex-user-menu__item {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #374151;
+  text-align: left;
+  text-decoration: none !important;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.globex-layout .globex-user-menu__item:hover,
+.globex-layout .globex-user-menu__item.is-active {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.globex-layout .globex-user-menu__item--signout {
+  color: #b91c1c;
+}
+
+.globex-layout .mobile-menu .globex-header-auth--mobile-signed-out,
+.globex-layout .mobile-menu .globex-header-auth--mobile-signed-in {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.globex-layout .mobile-menu .globex-header-auth__sign-in,
+.globex-layout .mobile-menu .globex-header-auth__sign-up,
+.globex-layout .mobile-menu .globex-header-auth__admin-sub,
+.globex-layout .mobile-menu .globex-header-auth__sign-out {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none !important;
+  border: 0;
+  cursor: pointer;
+}
+
+.globex-layout .mobile-menu .globex-header-auth__sign-in {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.globex-layout .mobile-menu .globex-header-auth__sign-up {
+  color: #fff;
+  background: #2563eb;
+}
+
+.globex-layout .mobile-menu .globex-header-auth__admin-sub {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+}
+
+.globex-layout .mobile-menu .globex-header-auth__sign-out {
+  color: #fecaca;
+  background: rgba(185, 28, 28, 0.2);
+}
+
+/* Legacy admin link class (still used by older markup) */
+.globex-layout .main-header .header-upper .outer-box .globex-admin-link,
+.globex-layout .sticky-header .outer-box .globex-admin-link {
+  order: 0;
+  margin-right: 8px;
+}
+
+/* Discreet admin link — header top bar + main nav */
+.globex-layout .globex-admin-link {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.globex-layout .main-header .header-upper .globex-admin-link {
+  color: #6b7280;
+}
+
+.globex-layout .globex-admin-link:hover {
+  opacity: 1;
+  color: #fff;
+  text-decoration: none;
+}
+
+.globex-layout .main-header .header-upper .globex-admin-link:hover {
+  color: #374151;
+}
+
+/* Contact form feedback */
+.globex-layout .globex-form-status {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.globex-layout .globex-form-status--success {
+  color: #15803d;
+}
+
+.globex-layout .globex-form-status--error {
+  color: #b91c1c;
+}
+
+/* X icon in team member social lists */
+.globex-layout .team-section .social-box .globex-social-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+}
+
 .globex-layout .color-palate {
   display: none !important;
 }

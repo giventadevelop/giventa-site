@@ -1,0 +1,319 @@
+---
+description: Minimal database + dev smoke-test onboarding for a new tenant_id — org, settings, logo, email addresses, test admin user, verification SQL/API. Use before or with satellite Phase 0.
+globs: documentation/aws-infrastructure/**/*,.env.local,.env.production,**/.env*,code_html_template/SQLS/**/*
+alwaysApply: false
+---
+
+# New Tenant Onboarding — Minimal Data & Dev Smoke Test
+
+Use this rule when onboarding a **new `tenant_id`** (local Docker dev **or** prod satellite). It hardens the **minimum database rows**, **test admin login**, **logo/contact**, and **verification** steps so a site can sign in, see the Admin menu, and open `/admin`.
+
+**Parent / sibling rules (do not duplicate):**
+
+| Rule | Role |
+|------|------|
+| [satellite_domain_new_site_configuration_and_deployment.mdc](mdc:.cursor/rules/satellite_domain_new_site_configuration_and_deployment.mdc) | **Prod satellite** Phases 0–8 (DNS, Amplify, Clerk, CORS) — runbook `#phase0` |
+| [database_local_postgres_connectivity.mdc](mdc:.cursor/rules/database_local_postgres_connectivity.mdc) | Local Docker Postgres (`event_site_manager_db`, container `event_site_manager_db-postgresql-1`) |
+| [clerk_auth_admin_user_lookup_avatar.mdc](mdc:.cursor/rules/clerk_auth_admin_user_lookup_avatar.mdc) | Admin menu = `user_role` ADMIN; `/api/auth/admin-status` |
+| [user_profile_operations.mdc](mdc:.cursor/rules/user_profile_operations.mdc) | Profile auto-create on sign-in (defaults to MEMBER) |
+| [database_schema_guidelines.mdc](mdc:.cursor/rules/database_schema_guidelines.mdc) | Table/column naming |
+
+**Canonical HTML (prod):** [satellite-frontend-deployment-guide.html](mdc:documentation/aws-infrastructure/satellite-frontend-deployment-guide.html) `#phase0`, `#deployed-instance-giventa`
+
+---
+
+## When to apply
+
+- New `NEXT_PUBLIC_TENANT_ID` in a frontend `.env.local` / `.env.production`
+- Satellite Phase 0 gate — org/settings missing for tenant
+- Local dev: API on `http://localhost:8080`, user signed in but **no Admin menu**
+- First-time bootstrap after copying admin backend into a marketing site (e.g. `giventa-site`)
+
+---
+
+## Phase order (agent checklist)
+
+```
+0. Agree tenant_id + www hostname + test user email
+1. tenant_organization     (required first — FK parent for emails)
+2. tenant_settings         (homepage flags, contact, logo URL)
+3. tenant_email_addresses  (CONTACT + INFO minimum for forms/email jobs)
+4. satellite_domains       (prod only — Phase 5 of satellite rule; optional for local)
+5. Test user sign-in       (Clerk creates user_profile as MEMBER)
+6. Promote test user ADMIN (UPDATE — not INSERT duplicate)
+7. Smoke verify            (API + UI)
+```
+
+**Gate:** Do not start Route 53 / Amplify / Clerk satellite DNS until steps 1–3 pass on the **target API** (local or prod). See satellite rule Phase 0.
+
+---
+
+## Step 0 — Collect inputs (ask operator)
+
+| Input | Example | Used in |
+|-------|---------|---------|
+| `tenant_id` | `giventa_inc_3` | All tables, `NEXT_PUBLIC_TENANT_ID` |
+| `www` hostname | `www.giventa.com` | `tenant_organization.domain`, satellite_domains |
+| Organization name | `Giventa Inc` | `tenant_organization.organization_name` |
+| Contact email | `giventauser@gmail.com` | org, settings, test admin, tenant_email_addresses |
+| Contact phone | `+1 312-343-0073` | settings / org |
+| Logo URL (HTTPS) | S3 or `/globex/assets/images/logo.png` | `tenant_organization.logo_url`, `tenant_settings.logo_image_url` |
+| Test Clerk user | Same contact email | Sign in on primary or satellite |
+
+**Google Calendar:** There is **no tenant-level Google Calendar ID** in the database. Event pages build **per-event** “Add to Google Calendar” links from `event_details.start_date` / `end_date` in the frontend. Smoke test = create one event with future dates and click the calendar link.
+
+**MinIO / media:** Production media uses **AWS S3** (`eventapp-media-bucket`). Local admin media upload requires the Spring Boot stack running and valid AWS (or configured storage) credentials in the backend `.env` — not a separate MinIO tenant row. Minimal onboarding = set `logo_image_url` to a reachable HTTPS URL; defer bulk media until S3 is configured.
+
+---
+
+## Step 1 — `tenant_organization` (create first)
+
+**UI:** Primary `www.event-site-manager.com` → **Admin → Tenant Management → Organizations**
+
+**API (prod or local JWT):**
+
+```http
+POST /api/tenant-organizations
+Content-Type: application/json
+Authorization: Bearer <service_jwt>
+
+{
+  "tenantId": "<TENANT_ID>",
+  "organizationName": "<ORG_NAME>",
+  "domain": "www.<apex>.com",
+  "contactEmail": "<contact@example.com>",
+  "contactPhone": "+1-555-0100",
+  "websiteUrl": "https://www.<apex>.com",
+  "logoUrl": "https://<bucket-or-cdn>/logo.png",
+  "primaryColor": "#2563eb",
+  "secondaryColor": "#111827",
+  "siteType": "EVENT_ORG",
+  "isActive": true
+}
+```
+
+**Verify:**
+
+```http
+GET /api/tenant-organizations?tenantId.equals=<TENANT_ID>&size=1
+```
+
+**Local SQL verify:**
+
+```powershell
+docker exec event_site_manager_db-postgresql-1 psql -U postgres -d event_site_manager_db -c "
+SELECT id, tenant_id, organization_name, domain, contact_email, logo_url
+FROM tenant_organization WHERE tenant_id = '<TENANT_ID>';
+"
+```
+
+---
+
+## Step 2 — `tenant_settings` (link to org)
+
+**UI:** Admin → Tenant Management → **Settings** (same `tenantId`, link `tenantOrganization: { id: <org_id> }`)
+
+**Minimum fields:**
+
+| Field | Suggested dev value |
+|-------|---------------------|
+| `tenantId` | `<TENANT_ID>` |
+| `tenantOrganizationId` | org `id` from step 1 |
+| `email` | contact email |
+| `phoneNumber` | contact phone |
+| `allowUserRegistration` | `true` |
+| `requireAdminApproval` | `false` (dev) / `true` (prod policy) |
+| `showEventsSectionInHomePage` | per product (Globex marketing sites may ignore) |
+| `logoImageUrl` | same as org logo |
+| `enableGuestRegistration` | `true` |
+
+**Verify:**
+
+```http
+GET /api/tenant-settings?tenantId.equals=<TENANT_ID>&size=1
+```
+
+---
+
+## Step 3 — `tenant_email_addresses` (contact forms + outbound email)
+
+Required for contact-form batch jobs (`emailType` = `CONTACT`). Add at least:
+
+| `email_type` | `email_address` | `is_default` | `is_active` |
+|--------------|-----------------|--------------|-------------|
+| `CONTACT` | contact email | `true` | `true` |
+| `INFO` | contact email | `true` | `true` |
+| `NOREPLY` | `noreply@<domain>` or contact | `true` | `true` |
+
+**API:**
+
+```http
+POST /api/tenant-email-addresses
+```
+
+**Local SQL example (after org exists):**
+
+```sql
+INSERT INTO tenant_email_addresses (tenant_id, email_type, email_address, is_default, is_active, created_at, updated_at)
+VALUES
+  ('<TENANT_ID>', 'CONTACT', '<contact@example.com>', true, true, NOW(), NOW()),
+  ('<TENANT_ID>', 'INFO',    '<contact@example.com>', true, true, NOW(), NOW())
+ON CONFLICT DO NOTHING;
+```
+
+---
+
+## Step 4 — `satellite_domains` (prod satellite only)
+
+Defer to [satellite_domain_new_site_configuration_and_deployment.mdc](mdc:.cursor/rules/satellite_domain_new_site_configuration_and_deployment.mdc) **Phase 5** unless branding is needed before DNS.
+
+**Reference row (giventa):** `tenant_id=giventa_inc_3`, `hostname=www.giventa.com`, `satelliteKey=giventa-com`, `enabled=true`.
+
+---
+
+## Step 5 — Test user sign-in (Clerk)
+
+1. Set frontend `.env.local`: `NEXT_PUBLIC_TENANT_ID`, Clerk keys, `NEXT_PUBLIC_API_BASE_URL=http://localhost:8080` (local).
+2. Start stack: Docker Postgres + Spring Boot `:8080` + `npm run dev`.
+3. Sign in with the **test email** on primary (`www.event-site-manager.com`) or satellite per [clerk_auth_satellite_v7_handshake.mdc](mdc:.cursor/rules/clerk_auth_satellite_v7_handshake.mdc).
+4. Clerk/webhook/sign-in flow creates `user_profile` with `user_role = 'MEMBER'` and `user_status = 'PENDING_APPROVAL'` by default.
+
+**Verify profile exists:**
+
+```http
+GET /api/user-profiles?userId.equals=<clerk_user_id>&tenantId.equals=<TENANT_ID>&size=1
+```
+
+---
+
+## Step 6 — Promote test user to ADMIN (critical)
+
+### Do NOT insert a duplicate row
+
+`user_profile` has unique constraints:
+
+- `(tenant_id, user_id)` — one profile per Clerk user per tenant
+- `(email, tenant_id)` — one profile per email per tenant
+
+If the user already signed in, **UPDATE** the existing row. Inserting a second row with the same email or `user_id` **will fail**.
+
+### Option A — SQL (local Docker — first admin / chicken-and-egg)
+
+```powershell
+docker exec event_site_manager_db-postgresql-1 psql -U postgres -d event_site_manager_db -c "
+UPDATE user_profile
+SET user_role = 'ADMIN', user_status = 'APPROVED', updated_at = NOW()
+WHERE tenant_id = '<TENANT_ID>'
+  AND user_id = '<clerk_user_id>'
+  AND email = '<contact@example.com>';
+
+SELECT id, tenant_id, user_id, email, user_role, user_status
+FROM user_profile
+WHERE tenant_id = '<TENANT_ID>' AND user_id = '<clerk_user_id>';
+"
+```
+
+**Worked example (giventa local, July 2026):**
+
+- `tenant_id`: `giventa_inc_3`
+- `user_id`: `user_2vVLxhPnsIPGYf6qpfozk383Slr`
+- `email`: `giventauser@gmail.com`
+- Result: `user_role=ADMIN`, `user_status=APPROVED`
+
+### Option B — Admin UI (after first admin exists)
+
+Admin → **Manage Usage** → Edit user → Role **ADMIN** → Save.
+
+### Option C — Prod API PATCH
+
+Use service JWT + `PATCH /api/user-profiles/{id}` with `userRole: "ADMIN"` (merge-patch). See [user_profile_operations.mdc](mdc:.cursor/rules/user_profile_operations.mdc).
+
+---
+
+## Step 7 — Smoke verification
+
+| Check | Pass criteria |
+|-------|----------------|
+| Tenant org | GET `tenant-organizations?tenantId.equals=...` ≥ 1 row |
+| Tenant settings | GET `tenant-settings?tenantId.equals=...` ≥ 1 row |
+| Admin status | Signed in → `GET /api/auth/admin-status` → `{ "isAdmin": true }` |
+| Admin menu | Header shows **Admin** dropdown (not only profile avatar) |
+| Admin panel | `GET /admin` → 200 (not Access Denied) |
+| Proxy | `GET /api/proxy/tenant-settings` → 200 |
+| Contact email | `tenant_email_addresses` has `CONTACT` default for tenant |
+| Logo | Org/settings `logo_url` / `logo_image_url` set; site header shows logo |
+| Calendar link | Optional: one test event → “Add to calendar” opens Google Calendar URL |
+
+**After DB role change:** hard refresh or sign out/in so `isTenantAdmin` / `useHeaderAuth` picks up ADMIN.
+
+---
+
+## Frontend env alignment
+
+Satellite / marketing site `.env.local` minimum:
+
+```bash
+NEXT_PUBLIC_TENANT_ID=<TENANT_ID>
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8080   # local
+API_JWT_USER=jwtadmin
+API_JWT_PASS=<dev_secret>
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+# Satellite only:
+NEXT_PUBLIC_CLERK_IS_SATELLITE=true
+NEXT_PUBLIC_PRIMARY_DOMAIN=www.event-site-manager.com
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=https://www.event-site-manager.com/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=https://www.event-site-manager.com/sign-up
+```
+
+`NEXT_PUBLIC_TENANT_ID` must match every DB row and Admin → Satellite Domains record.
+
+---
+
+## Automation matrix
+
+| Step | Local dev | Prod satellite |
+|------|-----------|----------------|
+| Tenant org + settings | Admin UI or POST with JWT | Admin UI or prod API (Phase 0 runbook) |
+| Email addresses | SQL or Admin | Admin / API |
+| Admin user promote | `docker exec psql` UPDATE | SQL (VPC) or Manage Usage UI |
+| Infra (DNS, Amplify, Clerk) | N/A | `Invoke-SatelliteFrontendBootstrap.ps1` — see runbook `#automation` |
+| Verify tenant rows | psql + curl JWT | runbook Phase 0 GET templates |
+
+**Orchestrator (infra only):** `documentation/aws-infrastructure/_private/scripts/Invoke-SatelliteFrontendBootstrap.ps1 -Phase All|Status`
+
+| **Future script hook:** `Bootstrap-TenantMinimalData.ps1` (tenant_id, email, clerk_user_id, api_base) — local Docker; see `documentation/aws-infrastructure/_private/scripts/Bootstrap-TenantMinimalData.ps1`
+
+---
+
+## Agent workflow
+
+1. Confirm target API: local `:8080` → [database_local_postgres_connectivity.mdc](mdc:.cursor/rules/database_local_postgres_connectivity.mdc); prod → runbook JWT.
+2. Run steps 1–3; **stop and report** if org or settings missing.
+3. Have operator sign in once (step 5); capture `user_id` from Clerk or `user_profile`.
+4. **UPDATE** admin role (step 6) — never duplicate `user_profile`.
+5. Run step 7 smoke table; link failures to clerk auth or satellite rules.
+6. For new **prod hostname**, continue with [satellite_domain_new_site_configuration_and_deployment.mdc](mdc:.cursor/rules/satellite_domain_new_site_configuration_and_deployment.mdc) Phase 1+.
+
+---
+
+## Anti-patterns
+
+```text
+❌ INSERT user_profile duplicate for same (tenant_id, user_id) or (email, tenant_id)
+❌ Expect Admin menu when user_role is still MEMBER
+❌ Skip tenant_settings and wonder why homepage/proxy returns empty
+❌ Skip tenant_email_addresses and wonder why contact form email fails
+❌ Use .env.local DATABASE_URL (Supabase) for local :8080 API data fixes
+❌ Query psql -d postgres instead of event_site_manager_db
+❌ Start Amplify/Clerk before Phase 0 org + settings exist (prod)
+```
+
+---
+
+## Reference deployment
+
+**giventa_inc_3 / www.giventa.com** — see runbook `#deployed-instance-giventa`:
+
+- `tenant_organizations.id=9`, `tenant_settings.id=9`, `satellite_domains.id=5`
+- Test admin: `giventauser@gmail.com` → `user_role=ADMIN` after onboarding step 6

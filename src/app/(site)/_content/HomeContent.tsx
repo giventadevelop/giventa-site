@@ -1,4 +1,5 @@
 /* Auto-generated from Angular template — do not edit by hand; run npm run convert:templates */
+import GlobexContactForm from '@/components/globex/GlobexContactForm';
 
 export default function HomeContent() {
   return (
@@ -310,10 +311,10 @@ export default function HomeContent() {
                     <div className="overlay-box">
                       <a href="images/gallery/1.jpg" data-fancybox="case" data-caption="" className="search-icon"><span className="icon flaticon-search"></span></a>
                       <div className="content">
-                        <h4><a href="projects-detail.html">Social Media App</a></h4>
+                        <h4><a href="/services">Social Media App</a></h4>
                         <div className="category">Ideas / Technology</div>
                       </div>
-                      <a href="projects-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
+                      <a href="/services" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
                     </div>
                   </div>
                 </div>
@@ -327,10 +328,10 @@ export default function HomeContent() {
                     <div className="overlay-box">
                       <a href="images/gallery/2.jpg" data-fancybox="case" data-caption="" className="search-icon"><span className="icon flaticon-search"></span></a>
                       <div className="content">
-                        <h4><a href="projects-detail.html">Social Media App</a></h4>
+                        <h4><a href="/services">Social Media App</a></h4>
                         <div className="category">Ideas / Technology</div>
                       </div>
-                      <a href="projects-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
+                      <a href="/services" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
                     </div>
                   </div>
                 </div>
@@ -344,10 +345,10 @@ export default function HomeContent() {
                     <div className="overlay-box">
                       <a href="images/gallery/3.jpg" data-fancybox="case" data-caption="" className="search-icon"><span className="icon flaticon-search"></span></a>
                       <div className="content">
-                        <h4><a href="projects-detail.html">Social Media App</a></h4>
+                        <h4><a href="/services">Social Media App</a></h4>
                         <div className="category">Ideas / Technology</div>
                       </div>
-                      <a href="projects-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
+                      <a href="/services" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
                     </div>
                   </div>
                 </div>
@@ -361,10 +362,10 @@ export default function HomeContent() {
                     <div className="overlay-box">
                       <a href="/images/gallery/4.jpg" data-fancybox="case" data-caption="" className="search-icon"><span className="icon flaticon-search"></span></a>
                       <div className="content">
-                        <h4><a href="projects-detail.html">Social Media App</a></h4>
+                        <h4><a href="/services">Social Media App</a></h4>
                         <div className="category">Ideas / Technology</div>
                       </div>
-                      <a href="projects-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
+                      <a href="/services" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
                     </div>
                   </div>
                 </div>
@@ -378,10 +379,10 @@ export default function HomeContent() {
                     <div className="overlay-box">
                       <a href="/images/gallery/5.jpg" data-fancybox="case" data-caption="" className="search-icon"><span className="icon flaticon-search"></span></a>
                       <div className="content">
-                        <h4><a href="projects-detail.html">Social Media App</a></h4>
+                        <h4><a href="/services">Social Media App</a></h4>
                         <div className="category">Ideas / Technology</div>
                       </div>
-                      <a href="projects-detail.html" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
+                      <a href="/services" className="arrow flaticon-long-arrow-pointing-to-the-right"></a>
                     </div>
                   </div>
                 </div>
@@ -524,7 +525,7 @@ export default function HomeContent() {
 
             </div>
 
-            <div className="lower-text">More than 5k customers share their thoughts to us. . . <a href="testimonial.html">Read All Reviews</a></div>
+            <div className="lower-text">More than 5k customers share their thoughts with us.</div>
 
           </div>
         </section>
@@ -646,17 +647,17 @@ export default function HomeContent() {
               <div className="team-block col-lg-3 col-md-6 col-sm-12">
                 <div className="inner-box">
                   <div className="image">
-                    <a href="team.html"><img src="/images/resource/team-1.jpg" alt="" /></a>
+                    <img src="/images/resource/team-1.jpg" alt="" />
                   </div>
                   <div className="lower-box">
                     {/* Social Box */}
                     <ul className="social-box">
                       <li><a href="#" className="fa fa-facebook-f"></a></li>
-                      <li><a href="#" className="fa fa-twitter"></a></li>
+                      <li><a href="#" className="globex-social-x" aria-label="X"><span aria-hidden="true">X</span></a></li>
                       <li><a href="#" className="fa fa-dribbble"></a></li>
                     </ul>
                     <div className="content">
-                      <h5><a href="team.html">Jennifer Garcia</a></h5>
+                      <h5>Jennifer Garcia</h5>
                       <div className="designation">Consultant Officer</div>
                     </div>
                   </div>
@@ -667,17 +668,17 @@ export default function HomeContent() {
               <div className="team-block col-lg-3 col-md-6 col-sm-12">
                 <div className="inner-box">
                   <div className="image">
-                    <a href="team.html"><img src="/images/resource/team-2.jpg" alt="" /></a>
+                    <img src="/images/resource/team-2.jpg" alt="" />
                   </div>
                   <div className="lower-box">
                     {/* Social Box */}
                     <ul className="social-box">
                       <li><a href="#" className="fa fa-facebook-f"></a></li>
-                      <li><a href="#" className="fa fa-twitter"></a></li>
+                      <li><a href="#" className="globex-social-x" aria-label="X"><span aria-hidden="true">X</span></a></li>
                       <li><a href="#" className="fa fa-dribbble"></a></li>
                     </ul>
                     <div className="content">
-                      <h5><a href="team.html">Robert Liam</a></h5>
+                      <h5>Robert Liam</h5>
                       <div className="designation">Web Designer</div>
                     </div>
                   </div>
@@ -688,17 +689,17 @@ export default function HomeContent() {
               <div className="team-block col-lg-3 col-md-6 col-sm-12">
                 <div className="inner-box">
                   <div className="image">
-                    <a href="team.html"><img src="/images/resource/team-3.jpg" alt="" /></a>
+                    <img src="/images/resource/team-3.jpg" alt="" />
                   </div>
                   <div className="lower-box">
                     {/* Social Box */}
                     <ul className="social-box">
                       <li><a href="#" className="fa fa-facebook-f"></a></li>
-                      <li><a href="#" className="fa fa-twitter"></a></li>
+                      <li><a href="#" className="globex-social-x" aria-label="X"><span aria-hidden="true">X</span></a></li>
                       <li><a href="#" className="fa fa-dribbble"></a></li>
                     </ul>
                     <div className="content">
-                      <h5><a href="team.html">Jassica Ethan</a></h5>
+                      <h5>Jassica Ethan</h5>
                       <div className="designation">Project Manager</div>
                     </div>
                   </div>
@@ -709,17 +710,17 @@ export default function HomeContent() {
               <div className="team-block col-lg-3 col-md-6 col-sm-12">
                 <div className="inner-box">
                   <div className="image">
-                    <a href="team.html"><img src="/images/resource/team-4.jpg" alt="" /></a>
+                    <img src="/images/resource/team-4.jpg" alt="" />
                   </div>
                   <div className="lower-box">
                     {/* Social Box */}
                     <ul className="social-box">
                       <li><a href="#" className="fa fa-facebook-f"></a></li>
-                      <li><a href="#" className="fa fa-twitter"></a></li>
+                      <li><a href="#" className="globex-social-x" aria-label="X"><span aria-hidden="true">X</span></a></li>
                       <li><a href="#" className="fa fa-dribbble"></a></li>
                     </ul>
                     <div className="content">
-                      <h5><a href="team.html">Adaim Mrala</a></h5>
+                      <h5>Adaim Mrala</h5>
                       <div className="designation">IT Service Officer</div>
                     </div>
                   </div>
@@ -745,7 +746,7 @@ export default function HomeContent() {
               <div className="news-block col-lg-4 col-md-6 col-sm-12">
                 <div className="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                   <div className="image">
-                    <a href="news-detail.html"><img src="/images/resource/news-1.jpg" alt="" /></a>
+                    <img src="/images/resource/news-1.jpg" alt="" />
                   </div>
                   <div className="lower-content">
                     <div className="post-date">22 <span>DEC</span></div>
@@ -753,9 +754,8 @@ export default function HomeContent() {
                       <li><span className="icon flaticon-comment"></span>3 comments</li>
                       <li><span className="icon flaticon-user"></span>Admin</li>
                     </ul>
-                    <h4><a href="news-detail.html">Define World Best IT Solution Technology</a></h4>
-                    <div className="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has ...</div>
-                    <a className="read-more" href="news-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
+                    <h4>Agentic Frameworks for Modern Enterprise Apps</h4>
+                    <div className="text">How leading teams use agentic AI frameworks to automate workflows and ship smarter software faster.</div>
                   </div>
                 </div>
               </div>
@@ -764,7 +764,7 @@ export default function HomeContent() {
               <div className="news-block col-lg-4 col-md-6 col-sm-12">
                 <div className="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                   <div className="image">
-                    <a href="news-detail.html"><img src="/images/resource/news-2.jpg" alt="" /></a>
+                    <img src="/images/resource/news-2.jpg" alt="" />
                   </div>
                   <div className="lower-content">
                     <div className="post-date">15 <span>DEC</span></div>
@@ -772,9 +772,8 @@ export default function HomeContent() {
                       <li><span className="icon flaticon-comment"></span>3 comments</li>
                       <li><span className="icon flaticon-user"></span>Admin</li>
                     </ul>
-                    <h4><a href="news-detail.html">You Must Try 20 Secret Of Digital Transform</a></h4>
-                    <div className="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has ...</div>
-                    <a className="read-more" href="news-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
+                    <h4>AI Automation Strategies for Business Growth</h4>
+                    <div className="text">Practical approaches to integrating AI automation across sales, support, and internal operations.</div>
                   </div>
                 </div>
               </div>
@@ -783,7 +782,7 @@ export default function HomeContent() {
               <div className="news-block col-lg-4 col-md-6 col-sm-12">
                 <div className="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                   <div className="image">
-                    <a href="news-detail.html"><img src="/images/resource/news-3.jpg" alt="" /></a>
+                    <img src="/images/resource/news-3.jpg" alt="" />
                   </div>
                   <div className="lower-content">
                     <div className="post-date">10 <span>oct</span></div>
@@ -791,9 +790,8 @@ export default function HomeContent() {
                       <li><span className="icon flaticon-comment"></span>3 comments</li>
                       <li><span className="icon flaticon-user"></span>Admin</li>
                     </ul>
-                    <h4><a href="news-detail.html">Digital Conference Of IT Tech Events in 2020</a></h4>
-                    <div className="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has ...</div>
-                    <a className="read-more" href="news-detail.html">Read More<span className="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
+                    <h4>Building Reliable LLM Pipelines for Production</h4>
+                    <div className="text">Key patterns for deploying LLM-powered features with monitoring, guardrails, and measurable ROI.</div>
                   </div>
                 </div>
               </div>
@@ -802,6 +800,34 @@ export default function HomeContent() {
           </div>
         </section>
         {/* End News Section */}
+
+        {/* Appointment / consultation form (services page pattern) */}
+        <section className="appointment-section style-two">
+          <div className="image-layer" style={{ backgroundImage: 'url(/images/background/4.jpg)' }}></div>
+          <div className="auto-container">
+            <div className="sec-title light centered">
+              <div className="title">CONTACT US</div>
+              <h2>Get a Free IT <br /> Consultation</h2>
+            </div>
+            <div className="inner-container">
+              <div className="row clearfix">
+                <div className="image-column col-lg-6 col-md-12 col-sm-12">
+                  <div className="inner-column wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div className="image">
+                      <img src="/images/resource/appointment.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className="form-column col-lg-6 col-md-12 col-sm-12">
+                  <div className="inner-column">
+                    <h4>Send us a message and our team will respond shortly.</h4>
+                    <GlobexContactForm variant="appointment" formId="home-appointment-form" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/*Scroll to top*/}
       <div className="scroll-to-top scroll-to-target" data-target="html"><span className="fa fa-arrow-up"></span></div>

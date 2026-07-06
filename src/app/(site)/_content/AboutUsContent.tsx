@@ -208,6 +208,17 @@ export default function AboutUsContent() {
                     </div>
                   </div>
 
+                  {/* Skill Item */}
+                  <div className="skill-item">
+                    <div className="skill-header clearfix">
+                      <div className="skill-title">AI Integration</div>
+                      <div className="skill-percentage"><div className="count-box"><span className="count-text" data-speed="2000" data-stop="88">0</span>%</div></div>
+                    </div>
+                    <div className="skill-bar">
+                      <div className="bar-inner"><div className="bar progress-line" data-width="88"></div></div>
+                    </div>
+                  </div>
+
                 </div>
 
                 <a href="/contact-us" className="theme-btn btn-style-two"><span className="txt">Learn More</span></a>
@@ -352,7 +363,7 @@ export default function AboutUsContent() {
                 <div className="icon-box">
                   <span className="flaticon-network-1"></span>
                 </div>
-                <h6>Dedicated Team</h6>
+                <h6>AI Integration</h6>
               </div>
             </div>
 
@@ -377,21 +388,20 @@ export default function AboutUsContent() {
 
               {/* Tab Btns*/}
               <ul className="tab-btns tab-buttons clearfix">
-                <li data-tab="#prod-html" className="tab-btn"><span className="icon flaticon-html"></span>HTML</li>
-                <li data-tab="#prod-bootstrap" className="tab-btn"><span className="icon flaticon-bootstrap"></span>Bootstrap</li>
-                <li data-tab="#prod-css" className="tab-btn active-btn"><span className="icon flaticon-css"></span>CSS</li>
-                <li data-tab="#prod-php" className="tab-btn"><span className="icon flaticon-php"></span>Php</li>
-                <li data-tab="#prod-java" className="tab-btn"><span className="icon flaticon-java"></span>JavaScript</li>
+                <li data-tab="#prod-nextjs" className="tab-btn active-btn"><span className="icon flaticon-coding-3"></span>Next.js</li>
+                <li data-tab="#prod-ai" className="tab-btn"><span className="icon flaticon-iot"></span>AI Technology</li>
+                <li data-tab="#prod-java" className="tab-btn"><span className="icon flaticon-java"></span>Java</li>
+                <li data-tab="#prod-cloud" className="tab-btn"><span className="icon flaticon-network-1"></span>Cloud</li>
               </ul>
 
               {/*Tabs Container*/}
               <div className="tabs-content">
 
                 {/*Tab / Active Tab*/}
-                <div className="tab" id="prod-html">
+                <div className="tab active-tab" id="prod-nextjs">
                   <div className="content">
-                    <h4>HTML Website Development Services</h4>
-                    <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
+                    <h4>Next.js Application Development</h4>
+                    <div className="text">Giventa is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> deliver modern web platforms with Next.js, server components, and cloud-ready architectures.</div>
                     <div className="btn-box text-center">
                       <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
@@ -399,34 +409,12 @@ export default function AboutUsContent() {
                 </div>
 
                 {/* Tab */}
-                <div className="tab" id="prod-bootstrap">
+                <div className="tab" id="prod-ai">
                   <div className="content">
-                    <h4>Bootstrap Website Development Services</h4>
-                    <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
+                    <h4>AI Technology & Automation Services</h4>
+                    <div className="text">Giventa is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> integrate agentic frameworks, LLM workflows, and intelligent automation into their products and operations.</div>
                     <div className="btn-box text-center">
-                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Tab */}
-                <div className="tab active-tab" id="prod-css">
-                  <div className="content">
-                    <h4>CSS Website Development Services</h4>
-                    <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
-                    <div className="btn-box text-center">
-                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Tab */}
-                <div className="tab" id="prod-php">
-                  <div className="content">
-                    <h4>Php Website Development Services</h4>
-                    <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
-                    <div className="btn-box text-center">
-                      <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
+                      <a href="/services" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
                   </div>
                 </div>
@@ -434,10 +422,21 @@ export default function AboutUsContent() {
                 {/* Tab */}
                 <div className="tab" id="prod-java">
                   <div className="content">
-                    <h4>JavaScript Website Development Services</h4>
-                    <div className="text">Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> elevate their value through custom software development, product design, QA and consultancy services.</div>
+                    <h4>Java Enterprise Development</h4>
+                    <div className="text">Giventa is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> build secure, scalable backend systems with Java, Spring Boot, and enterprise integration patterns.</div>
                     <div className="btn-box text-center">
                       <a href="/services/web-development" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tab */}
+                <div className="tab" id="prod-cloud">
+                  <div className="content">
+                    <h4>Cloud & DevOps Engineering</h4>
+                    <div className="text">Giventa is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses <br /> modernize infrastructure with cloud migration, CI/CD pipelines, and reliable DevOps practices.</div>
+                    <div className="btn-box text-center">
+                      <a href="/services/it-consultancy" className="theme-btn btn-style-three"><span className="txt">Learn More</span></a>
                     </div>
                   </div>
                 </div>

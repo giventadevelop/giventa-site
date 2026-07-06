@@ -1,0 +1,23 @@
+---
+description: Giventa-site layout separation — Globex marketing shell vs admin/backend (no MOSC public routes)
+globs: src/app/(site)/layout.tsx, src/app/layout.tsx, src/components/globex/**, src/app/admin/**, src/middleware.ts
+alwaysApply: true
+---
+
+# Giventa Layout Separation
+
+## Public marketing (Globex)
+- Routes: `/`, `/about-us`, `/services`, `/contact-us`, `/home`
+- Shell: `src/app/(site)/layout.tsx` — GlobexHeader, GlobexFooter, GlobexInfoSidebar
+- **Do not** add MOSC/Syro routes or `/mosc-redesign` to this project
+
+## Admin + auth + API (mosc-temp backend pattern)
+- Routes: `/admin/*`, `/sign-in`, `/sign-up`, `/api/*`, `/pages/api/proxy/*`
+- **Outside** `(site)` route group — no Globex header/footer
+- Clerk: satellite `www.giventa.com` → primary `www.event-site-manager.com`
+- Admin link: `GlobexAdminLink` in header (client check via `/api/auth/admin-status`)
+
+## Clerk satellite (giventa)
+- Env: `NEXT_PUBLIC_CLERK_IS_SATELLITE=true`, absolute `NEXT_PUBLIC_CLERK_SIGN_IN_URL=https://www.event-site-manager.com/sign-in`
+- Config helpers: `src/lib/clerkSatellite.ts` → `getClerkSatelliteMiddlewareOptions()`, `getClerkProviderSatelliteProps()`
+- See also: `clerk_auth_satellite_v7_handshake.mdc`, `clerk_auth_admin_user_lookup_avatar.mdc`

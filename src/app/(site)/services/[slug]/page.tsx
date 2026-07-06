@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import GlobexContactForm from '@/components/globex/GlobexContactForm';
 import { getServiceBySlug, SERVICE_DETAILS } from '@/lib/serviceDetails';
 
 type ServiceDetailPageProps = {
@@ -60,6 +61,30 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <Link href="/contact-us" className="theme-btn btn-style-one">
               <span className="txt">Request a Consultation</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="appointment-section style-two">
+        <div className="image-layer" style={{ backgroundImage: 'url(/images/background/4.jpg)' }}></div>
+        <div className="auto-container">
+          <div className="sec-title light centered">
+            <div className="title">CONTACT US</div>
+            <h2>Ask About {service.title}</h2>
+          </div>
+          <div className="inner-container">
+            <div className="row clearfix">
+              <div className="form-column col-lg-8 col-md-12 col-sm-12" style={{ margin: '0 auto' }}>
+                <div className="inner-column">
+                  <GlobexContactForm
+                    variant="appointment"
+                    formId={`service-${slug}-contact-form`}
+                    submitLabel="Send Inquiry"
+                    inquiryContext={service.title}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

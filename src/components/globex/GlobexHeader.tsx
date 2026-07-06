@@ -3,9 +3,14 @@ import Link from 'next/link';
 import GlobexLogo from '@/components/globex/GlobexLogo';
 import GlobexNavMenu from '@/components/globex/GlobexNavMenu';
 import GlobexSocialLinks from '@/components/globex/GlobexSocialLinks';
+import GlobexHeaderAuth from '@/components/globex/GlobexHeaderAuth';
 import { SITE_CONTACT } from '@/lib/siteContact';
 
-export default function GlobexHeader() {
+type GlobexHeaderProps = {
+  isTenantAdmin?: boolean;
+};
+
+export default function GlobexHeader({ isTenantAdmin = false }: GlobexHeaderProps) {
   return (
     <>
       <header className="main-header header-style-one">
@@ -67,9 +72,7 @@ export default function GlobexHeader() {
               </nav>
 
               <div className="outer-box clearfix">
-                <div className="search-box-btn search-box-outer">
-                  <span className="icon fa fa-search"></span>
-                </div>
+                <GlobexHeaderAuth layout="desktop" isTenantAdmin={isTenantAdmin} />
                 <div className="btn-box">
                   <Link href="/contact-us" className="theme-btn btn-style-one">
                     <span className="txt">Free Consulting</span>
@@ -91,9 +94,6 @@ export default function GlobexHeader() {
             <div className="pull-right">
               <nav className="main-menu"></nav>
               <div className="outer-box clearfix">
-                <div className="search-box-btn search-box-outer">
-                  <span className="icon fa fa-search"></span>
-                </div>
                 <div className="btn-box">
                   <Link href="/contact-us" className="theme-btn btn-style-one">
                     <span className="txt">Free Consulting</span>
@@ -114,6 +114,7 @@ export default function GlobexHeader() {
               <GlobexLogo variant="mobile" />
             </div>
             <div className="menu-outer"></div>
+            <GlobexHeaderAuth layout="mobile" isTenantAdmin={isTenantAdmin} />
           </nav>
         </div>
       </header>
