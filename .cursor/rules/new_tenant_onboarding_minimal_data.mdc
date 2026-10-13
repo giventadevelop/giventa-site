@@ -68,7 +68,7 @@ Use this rule when onboarding a **new `tenant_id`** (local Docker dev **or** pro
 
 ## Step 1 — `tenant_organization` (create first)
 
-**UI:** Primary `www.event-site-manager.com` → **Admin → Tenant Management → Organizations**
+**UI:** Primary `www.kluvo.ai` → **Admin → Tenant Management → Organizations**
 
 **API (prod or local JWT):**
 
@@ -175,7 +175,7 @@ Defer to [satellite_domain_new_site_configuration_and_deployment.mdc](mdc:.curso
 
 1. Set frontend `.env.local`: `NEXT_PUBLIC_TENANT_ID`, Clerk keys, `NEXT_PUBLIC_API_BASE_URL=http://localhost:8080` (local).
 2. Start stack: Docker Postgres + Spring Boot `:8080` + `npm run dev`.
-3. Sign in with the **test email** on primary (`www.event-site-manager.com`) or satellite per [clerk_auth_satellite_v7_handshake.mdc](mdc:.cursor/rules/clerk_auth_satellite_v7_handshake.mdc).
+3. Sign in with the **test email** on primary (`www.kluvo.ai`) or satellite per [clerk_auth_satellite_v7_handshake.mdc](mdc:.cursor/rules/clerk_auth_satellite_v7_handshake.mdc).
 4. Clerk/webhook/sign-in flow creates `user_profile` with `user_role = 'MEMBER'` and `user_status = 'PENDING_APPROVAL'` by default.
 
 **Verify profile exists:**
@@ -261,9 +261,9 @@ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
 CLERK_SECRET_KEY=sk_test_...
 # Satellite only:
 NEXT_PUBLIC_CLERK_IS_SATELLITE=true
-NEXT_PUBLIC_PRIMARY_DOMAIN=www.event-site-manager.com
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=https://www.event-site-manager.com/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=https://www.event-site-manager.com/sign-up
+NEXT_PUBLIC_PRIMARY_DOMAIN=www.kluvo.ai
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=https://www.kluvo.ai/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=https://www.kluvo.ai/sign-up
 ```
 
 `NEXT_PUBLIC_TENANT_ID` must match every DB row and Admin → Satellite Domains record.
