@@ -250,7 +250,7 @@ WHERE user_id = 'user_2vVLxhPnsIPGYf6qpfozk383Slr'
   AND tenant_id = 'giventa_inc_3';
 ```
 
-**Local Docker:** use [database_local_postgres_connectivity.mdc](mdc:.cursor/rules/database_local_postgres_connectivity.mdc) — database `kluvo_ai_db`, not `postgres`.
+**Local Docker:** use [database_local_postgres_connectivity.mdc](mdc:.cursor/rules/database_local_postgres_connectivity.mdc) — database `adwiise_agent_db`, not `postgres`.
 
 **Important Notes**:
 - ⚠️ **Case-Sensitive**: The value must be exactly `'ADMIN'` (uppercase)
